@@ -1,16 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Link } from '@reach/router';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from '@emotion/styled';
+import { ThemeProvider } from 'emotion-theming';
 
 import globalStyles from 'themes/globalStyles';
+
+import { NavBar } from 'NavBar';
 
 import { Events, Home, Registry, RSVP, ThingsToDo, Travel } from 'pages/index';
 
 const AppWrapper = styled.div`
   padding: ${props => props.theme.padding};
   background: ${props => props.theme.body};
-  color: ${props => props.theme.text};
+  color: ${props => props.theme.fontBlack};
   min-height: 500px;
 `;
 
@@ -19,9 +22,9 @@ const App = () => {
     <React.StrictMode>
       <ThemeProvider theme={globalStyles}>
         <AppWrapper>
-          <header>Header</header>
+          <NavBar />
           <Router>
-            <Home path="/" />
+            <Home default path="/" />
             <Events path="/events" />
             <Travel path="/travel" />
             <ThingsToDo path="thingsToDo" />

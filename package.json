@@ -1,10 +1,12 @@
 {
   "dependencies": {
+    "@emotion/core": "^10.0.14",
+    "@emotion/styled": "^10.0.15",
     "@reach/router": "^1.2.1",
-    "react": "15.x || 16.x || 16.4.0-alpha.0911da3",
+    "emotion-theming": "^10.0.14",
+    "react": ">=16.3.0",
     "react-dom": "15.x || 16.x || 16.4.0-alpha.0911da3",
-    "src": "^1.1.2",
-    "styled-components": "^4.3.2"
+    "src": "^1.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
