@@ -4,10 +4,9 @@ import { Router, Link } from '@reach/router';
 import styled from '@emotion/styled';
 import { ThemeProvider } from 'emotion-theming';
 
-import globalStyles from 'themes/globalStyles';
+import { globalStyles } from 'themes/index';
 
-import { NavBar } from 'NavBar';
-
+import { NavBar } from 'components/NavBar/index';
 import { Events, Home, Registry, RSVP, ThingsToDo, Travel } from 'pages/index';
 
 const AppWrapper = styled.div`

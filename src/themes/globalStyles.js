@@ -1,4 +1,4 @@
-const globalStyles = {
+export const globalStyles = {
   body: '#f5f5f5',
   fontBlack: '#181818',
   fontGray: '#5d5d5d',
@@ -12,5 +12,3 @@ const globalStyles = {
   dark: 'black',
   h2: '18px'
 };
-
-export default globalStyles;
