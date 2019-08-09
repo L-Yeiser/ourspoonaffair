@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 
-import { MenuToggle } from './MenuToggle';
+import { MenuButton } from './MenuButton/index';
+import { Dropdown } from './Dropdown/index';
+
 import { NavLink } from './NavLink';
-import { TopNav } from './TopNav';
-import { Dropdown } from './Dropdown';
+import { Nav } from './style';
 
 export const NavBar = () => {
   const [isMenuOpen, toggleMenu] = useState(false);
 
   return (
-    <TopNav>
+    <Nav>
       <div className="links">
+        <NavLink to="/">Home</NavLink>
         <NavLink to="/RSVP">RSVP</NavLink>
         <NavLink to="/events">Events</NavLink>
         <NavLink to="/travel">Travel</NavLink>
@@ -18,9 +20,9 @@ export const NavBar = () => {
         <NavLink to="registry">Registry</NavLink>
       </div>
       <div className="menu">
-        <MenuToggle isOpen={isMenuOpen} open={toggleMenu} />
-        <Dropdown />
+        <MenuButton isOpen={isMenuOpen} open={toggleMenu} />
+        <Dropdown isOpen={isMenuOpen} />
       </div>
-    </TopNav>
+    </Nav>
   );
 };

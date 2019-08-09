@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from '@emotion/styled';
 
-const Wrapper = styled.div`
+export const Button = styled.div`
   width: 30px;
   height: 25px;
   position: relative;
@@ -49,9 +48,6 @@ const Wrapper = styled.div`
     top: 80%;
   }
 
-  /* .open span {
-    width: 51%;
-  } */
   .open span:nth-child(1),
   .open span:nth-child(6) {
     -webkit-transform: rotate(45deg);
@@ -98,16 +94,3 @@ const Wrapper = styled.div`
     top: calc(58%);
   }
 `;
-
-export const MenuToggle = props => (
-  <Wrapper onClick={() => props.open(!props.isOpen)}>
-    <div className={props.isOpen ? 'open' : null}>
-      <span />
-      <span />
-      <span />
-      <span />
-      <span />
-      <span />
-    </div>
-  </Wrapper>
-);
