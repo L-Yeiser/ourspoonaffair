@@ -7,7 +7,6 @@ export const Button = styled.div`
   border: none;
 
   span {
-    display: block;
     position: absolute;
     height: 20%;
     width: 50%;

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { Button } from './style';
 
-export const MenuButton = props => (
-  <Button onClick={() => props.open(!props.isOpen)}>
+export const MenuButton = memo(props => (
+  <Button onClick={props.open}>
     <div className={props.isOpen ? 'open' : null}>
       <span />
       <span />
@@ -13,4 +13,4 @@ export const MenuButton = props => (
       <span />
     </div>
   </Button>
-);
+));
