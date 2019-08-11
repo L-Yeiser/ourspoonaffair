@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import styled from '@emotion/styled';
 
-import { colors, standards, constants } from 'themes/index';
+import { colors, standards, constants } from 'themes';
 
 const breakpoints = [576, 768, 992, 1200];
 

@@ -1,2 +1,2 @@
-export * from './Dropdown/index';
-export * from './MenuButton/index';
+export * from './Dropdown';
+export * from './MenuButton';

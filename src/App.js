@@ -4,12 +4,12 @@ import { Router } from '@reach/router';
 import styled from '@emotion/styled';
 import { ThemeProvider } from 'emotion-theming';
 
-import { globalStyles } from 'themes/index';
+import { globalStyles } from 'themes';
 
 import image from 'assets/background.jpg';
 
-import { NavBar } from 'components/NavBar/index';
-import { Events, Home, Registry, RSVP, ThingsToDo, Travel } from 'pages/index';
+import { NavBar } from 'components/NavBar';
+import { Events, Home, Registry, RSVP, ThingsToDo, Travel } from 'pages';
 
 const AppWrapper = styled.div`
   color: ${props => props.theme.fontBlack};

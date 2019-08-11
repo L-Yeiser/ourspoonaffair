@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 
-import { MenuButton, Dropdown } from 'UI/index';
+import { MenuButton, Dropdown } from 'UI';
 
 export const Menu = ({ isOpen, open, children }) => {
   const dropdown = useRef();

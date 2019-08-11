@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useToggleState } from 'Hooks/index';
+import { useToggleState } from 'Hooks';
 
 import { Menu } from './Menu';
 import { NavLink } from './NavLink';
