@@ -6,14 +6,26 @@ import { Menu } from './Menu';
 import { NavLink } from './NavLink';
 import { Nav } from './style';
 
-const Links = () => (
+const Links = ({ onClick }) => (
   <>
-    <NavLink to="/">Home</NavLink>
-    <NavLink to="/RSVP">RSVP</NavLink>
-    <NavLink to="/events">Events</NavLink>
-    <NavLink to="/travel">Travel</NavLink>
-    <NavLink to="/thingsToDo">Things to Do</NavLink>
-    <NavLink to="registry">Registry</NavLink>
+    <NavLink onClick={onClick} to="/">
+      Home
+    </NavLink>
+    <NavLink onClick={onClick} to="/RSVP">
+      RSVP
+    </NavLink>
+    <NavLink onClick={onClick} to="/events">
+      Events
+    </NavLink>
+    <NavLink onClick={onClick} to="/travel">
+      Travel
+    </NavLink>
+    <NavLink onClick={onClick} to="/thingsToDo">
+      Things to Do
+    </NavLink>
+    <NavLink onClick={onClick} to="registry">
+      Registry
+    </NavLink>
   </>
 );
 
@@ -26,7 +38,7 @@ export const NavBar = () => {
         <Links />
       </div>
       <Menu isOpen={isMenuOpen} open={toggleMenu}>
-        <Links />
+        <Links onClick={toggleMenu} />
       </Menu>
     </Nav>
   );
