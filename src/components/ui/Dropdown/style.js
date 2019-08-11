@@ -3,29 +3,33 @@ import styled from '@emotion/styled';
 import { standards, colors } from 'themes';
 
 export const Container = styled.div`
-  position: absolute;
+  background-color: ${colors.grayDarkest};
+  border-radius: 2px;
+  box-shadow: 0px 8px 16px 0px ${colors.grayLightest};
+  display: flex;
+  min-width: 175px;
   opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
-  transition: visibility 0s, opacity 0.3s ease-in-out;
+  padding: ${standards.padding};
+  position: absolute;
   right: 0px;
   top: 30px;
-  background-color: ${colors.grayDarkest};
-  z-index: ${standards.aboveNav};
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: ${standards.padding} 0;
-  flex-wrap: wrap;
-  display: flex;
+  transition: visibility 0s, opacity 0.3s ease-in-out;
 
   .content {
+    flex: 1;
+  }
+
+  .link {
     display: flex;
     justify-content: flex-end;
+    flex: 1;
   }
 
   a {
-    white-space: nowrap;
-    margin: 0 ${standards.marginLarge};
+    color: ${colors.white};
 
     &.active {
-      color: ${colors.blueSlate};
+      color: ${colors.grayLight};
     }
   }
 `;

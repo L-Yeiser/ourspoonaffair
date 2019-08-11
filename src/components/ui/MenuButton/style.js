@@ -1,16 +1,19 @@
 import styled from '@emotion/styled';
 
+import { colors } from 'themes';
+
 export const Button = styled.div`
   width: 30px;
   height: 25px;
   position: relative;
   border: none;
+  overflow: hidden;
 
   span {
     position: absolute;
     height: 20%;
     width: 50%;
-    background: #55616d;
+    background: ${colors.grayDark};
     opacity: 1;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);

@@ -1,16 +1,23 @@
+/** @jsx jsx */
 import styled from '@emotion/styled';
 
-import { colors, standards } from 'themes/index';
+import { colors, standards, constants } from 'themes/index';
+
+const breakpoints = [576, 768, 992, 1200];
+
+const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
+
+console.log(mq[0]);
 
 export const Nav = styled.nav`
-  padding: ${props => props.theme.padding};
-  background-color: ${colors.blueSlate};
+  padding: ${standards.paddingLarge} ${standards.padding};
+  background-color: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   a {
-    color: ${colors.grayLight};
+    color: ${colors.black};
     padding: ${standards.padding};
     text-decoration: none;
     font-size: ${standards.h4};
@@ -21,10 +28,10 @@ export const Nav = styled.nav`
     flex-direction: row;
 
     a.active {
-      color: ${colors.grayDarkest};
+      color: ${colors.grayLight};
     }
 
-    @media (max-width: 1000px) {
+    ${[constants.mediaQuery('small')]} {
       a:not(.active) {
         display: none;
       }
@@ -36,7 +43,7 @@ export const Nav = styled.nav`
     position: relative;
   }
 
-  @media (max-width: 1000px) {
+  ${[constants.mediaQuery('small')]} {
     .menu {
       display: flex;
     }

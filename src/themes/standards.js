@@ -5,6 +5,7 @@ const zIndex = {
 const spacing = {
   padding: '10px',
   paddingMedium: '15px',
+  paddingLarge: '30px',
   margin: '10px',
   marginMedium: '15px',
   marginLarge: '30px',

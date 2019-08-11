@@ -5,4 +5,8 @@ const isActive = ({ isCurrent }) => {
   return isCurrent ? { className: 'active' } : null;
 };
 
-export const NavLink = props => <Link getProps={isActive} {...props} />;
+export const NavLink = props => (
+  <div className="link">
+    <Link getProps={isActive} {...props} />
+  </div>
+);
