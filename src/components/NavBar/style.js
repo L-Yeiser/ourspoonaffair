@@ -7,8 +7,12 @@ export const Nav = styled.nav`
   padding: ${standards.paddingLarge} ${standards.padding};
   background-color: transparent;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+
+  ${[constants.mediaQuery('large')]} {
+    justify-content: space-between;
+  }
 
   a {
     color: ${colors.black};

@@ -5,7 +5,8 @@
     "@reach/router": "^1.2.1",
     "emotion-theming": "^10.0.14",
     "react": ">=16.3.0",
-    "react-dom": "15.x || 16.x || 16.4.0-alpha.0911da3"
+    "react-dom": "15.x || 16.x || 16.4.0-alpha.0911da3",
+    "validate.js": "^0.13.1"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

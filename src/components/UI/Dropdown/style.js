@@ -4,7 +4,7 @@ import { standards, colors } from 'themes';
 
 export const Container = styled.div`
   background-color: ${colors.grayDarkest};
-  border-radius: 2px;
+  border-radius: ${standards.borderRadius};
   box-shadow: 0px 8px 16px 0px ${colors.grayLightest};
   display: flex;
   min-width: 175px;
