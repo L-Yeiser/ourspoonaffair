@@ -16,6 +16,7 @@ const FormContext = React.createContext();
 
 const FormSubmit = React.memo(({ onSubmit, children }) => (
   <Submit
+    type="submit"
     onClick={e => {
       e.preventDefault();
       onSubmit();

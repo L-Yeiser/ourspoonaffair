@@ -7,9 +7,9 @@ export const RadioGroup = React.memo(({ id, inputs, onChange, value }) => {
     <React.Fragment key={inputId}>
       <RadioInput
         defaultChecked={value === inputId}
-        type="radio"
         id={inputId}
         name={id}
+        type="radio"
       />
       <label
         onClick={() => {

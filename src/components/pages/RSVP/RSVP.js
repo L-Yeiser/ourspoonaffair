@@ -16,11 +16,8 @@ const GuestCount = ({ count }) =>
             label={`${index + 1}. Name`}
           />
         ))}
-      <Form.FormBreak />
     </>
-  ) : (
-    <Form.FormBreak />
-  );
+  ) : null;
 
 export const RSVP = () => {
   const [rsvp, setRsvp] = useState({});
@@ -32,8 +29,6 @@ export const RSVP = () => {
     }));
   }, []);
 
-  console.log(rsvp);
-
   return (
     <Container>
       <FormContainer>
@@ -44,9 +39,6 @@ export const RSVP = () => {
           <Form.ContentContainer>
             <Form.FormInput id="name" label="Full Name" type="text" />
             <Form.FormInput id="email" label="Email" type="email" />
-
-            <Form.FormBreak />
-
             <Form.SectionLabel label="Attending" />
             <Form.FormRadioGroup
               id="attending"
@@ -61,7 +53,6 @@ export const RSVP = () => {
                 },
               ]}
             />
-
             {rsvp.attending === 'yes' ? (
               <>
                 <Form.FormInput
@@ -74,9 +65,7 @@ export const RSVP = () => {
                 />
                 <GuestCount count={rsvp.guestCount} />
               </>
-            ) : (
-              <Form.FormBreak />
-            )}
+            ) : null}
           </Form.ContentContainer>
           <Form.FormSubmit onSubmit={() => console.log('SUBMIT')}>
             Get Excited

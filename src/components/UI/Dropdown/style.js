@@ -5,8 +5,7 @@ import { standards, colors } from 'themes';
 export const Container = styled.div`
   background-color: ${colors.grayDarkest};
   border-radius: ${standards.borderRadius};
-  box-shadow: 0px 8px 16px 0px ${colors.grayLightest};
-  display: flex;
+  display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
   min-width: 175px;
   opacity: ${({ isOpen }) => (isOpen ? 1 : 0)};
   padding: ${standards.padding};
@@ -14,6 +13,7 @@ export const Container = styled.div`
   right: 0px;
   top: 30px;
   transition: visibility 0s, opacity 0.3s ease-in-out;
+  z-index: ${standards.overNav};
 
   .content {
     flex: 1;

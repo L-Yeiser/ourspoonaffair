@@ -25,6 +25,8 @@ const AppWrapper = styled.div`
   h2 {
     font-size: ${standards.h2};
     font-family: 'Long Cang', cursive;
+    margin-block-start: 0;
+    margin-block-end: 0;
   }
 
   input {
