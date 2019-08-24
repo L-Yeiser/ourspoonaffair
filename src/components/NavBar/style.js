@@ -3,18 +3,16 @@ import styled from '@emotion/styled';
 
 import { colors, standards, constants } from 'themes';
 
-const breakpoints = [576, 768, 992, 1200];
-
-const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
-
-console.log(mq[0]);
-
 export const Nav = styled.nav`
   padding: ${standards.paddingLarge} ${standards.padding};
   background-color: transparent;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+
+  ${[constants.mediaQuery('large')]} {
+    justify-content: space-between;
+  }
 
   a {
     color: ${colors.black};
@@ -31,7 +29,7 @@ export const Nav = styled.nav`
       color: ${colors.grayLight};
     }
 
-    ${[constants.mediaQuery('small')]} {
+    ${[constants.mediaQuery('large')]} {
       a:not(.active) {
         display: none;
       }
@@ -43,7 +41,7 @@ export const Nav = styled.nav`
     position: relative;
   }
 
-  ${[constants.mediaQuery('small')]} {
+  ${[constants.mediaQuery('large')]} {
     .menu {
       display: flex;
     }

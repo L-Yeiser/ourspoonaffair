@@ -4,7 +4,7 @@ import { Router } from '@reach/router';
 import styled from '@emotion/styled';
 import { ThemeProvider } from 'emotion-theming';
 
-import { globalStyles } from 'themes';
+import { globalStyles, standards } from 'themes';
 
 import image from 'assets/background.jpg';
 
@@ -20,6 +20,46 @@ const AppWrapper = styled.div`
   width: '100%'
   background-repeat: no-repeat;
   background-size: cover;
+  font-size: ${standards.body};
+
+  h2 {
+    font-size: ${standards.h2};
+    font-family: 'Long Cang', cursive;
+  }
+
+  input {
+    @keyframes autofill {
+      100% {
+          background: transparent;
+          color: inherit;
+      }
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        -webkit-animation: autofill 0s forwards;
+        animation: autofill 0s forwards;
+    }
+    
+    &[type=number]::-webkit-inner-spin-button, 
+    &[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+    }
+  }
+
+
+  /* input:-webkit-autofill {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #fff !important;
+  }
+
+  input:-webkit-autofill:focus {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #fff !important;
+  }  */
 `;
 
 const App = () => {

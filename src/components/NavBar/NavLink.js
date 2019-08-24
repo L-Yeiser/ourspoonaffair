@@ -7,6 +7,6 @@ const isActive = ({ isCurrent }) => {
 
 export const NavLink = props => (
   <div className="link">
-    <Link getProps={isActive} {...props} />
+    <Link getProps={isActive} {...props} onClick={props.onClick} />
   </div>
 );

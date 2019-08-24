@@ -9,4 +9,5 @@ export const colors = {
   grayDark: '#808080',
   grayDarkest: '#343434',
   black: 'rgb(25, 25, 25)',
+  blackAlpha: 'rgba(25, 25, 25, 0.75)',
 };

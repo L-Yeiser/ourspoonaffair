@@ -3,10 +3,10 @@ import React, { useRef, useEffect } from 'react';
 import { MenuButton, Dropdown } from 'UI';
 
 export const Menu = ({ isOpen, open, children }) => {
-  const dropdown = useRef();
+  const menu = useRef();
 
   const handleClick = e => {
-    if (dropdown.current.contains(e.target)) {
+    if (menu.current.contains(e.target)) {
       return;
     }
 
@@ -22,7 +22,7 @@ export const Menu = ({ isOpen, open, children }) => {
   }, []);
 
   return (
-    <div className="menu" ref={dropdown}>
+    <div className="menu" ref={menu}>
       <MenuButton isOpen={isOpen} open={open} />
       <Dropdown isOpen={isOpen}>{children}</Dropdown>
     </div>

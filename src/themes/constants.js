@@ -1,6 +1,6 @@
 const breakpoints = {
   small: 600,
-  large: 1500,
+  large: 1000,
 };
 
 const mediaQuery = type => {
