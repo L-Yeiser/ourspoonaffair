@@ -12,6 +12,7 @@ export const SectionLabel = ({ htmlFor, label }) => (
       display: 'inline-grid',
       justifyContent: 'start',
       alignContent: 'end',
+      paddingBottom: standards.paddingExtraSmal,
     }}
   >
     <label htmlFor={htmlFor}>{label}</label>
@@ -23,18 +24,18 @@ export const SectionContent = styled.div({
   gridColumnEnd: 3,
 });
 
-export const FormBreak = styled.div`
-  margin-bottom: ${standards.marginLarge};
+export const FormBreak = styled.div``;
+
+export const ContentContainer = styled.div`
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-auto-rows: 1fr;
+  grid-column-gap: ${standards.marginMedium};
+  grid-row-gap: ${standards.padding};
 `;
 
 export const Container = styled.form`
   display: grid;
-  grid-template-columns: auto auto;
-  grid-column-gap: ${standards.marginMedium};
-`;
-
-export const FormSection = styled.div`
-  flex-direction: column;
 `;
 
 export const Submit = styled.button`

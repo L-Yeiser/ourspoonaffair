@@ -10,9 +10,10 @@ const GuestCount = ({ count }) =>
         .fill(true)
         .map((_, index) => (
           <Form.FormInput
+            key={index}
             type="text"
-            id={`guest-${index}`}
-            label={`${index + 1}. Guest Name`}
+            id={`guest-${index + 1}`}
+            label={`${index + 1}. Name`}
           />
         ))}
       <Form.FormBreak />
@@ -31,6 +32,8 @@ export const RSVP = () => {
     }));
   }, []);
 
+  console.log(rsvp);
+
   return (
     <Container>
       <FormContainer>
@@ -38,41 +41,43 @@ export const RSVP = () => {
           <h2>RSVP</h2>
         </header>
         <Form onChange={updateRsvp} formContent={rsvp}>
-          <Form.FormInput id="name" label="Full Name" type="text" />
-          <Form.FormInput id="email" label="Email" type="email" />
+          <Form.ContentContainer>
+            <Form.FormInput id="name" label="Full Name" type="text" />
+            <Form.FormInput id="email" label="Email" type="email" />
 
-          <Form.FormBreak />
-
-          <Form.SectionLabel label="Attending" />
-          <Form.FormRadioGroup
-            id="attending"
-            inputs={[
-              {
-                id: 'yes',
-                label: 'Yes',
-              },
-              {
-                id: 'no',
-                label: 'No',
-              },
-            ]}
-          />
-
-          {rsvp.attending === 'yes' ? (
-            <>
-              <Form.FormInput
-                type="text"
-                id="guestCount"
-                label="Guest Count"
-                size="2"
-                maxLength="1"
-                pattern="\d*"
-              />
-              <GuestCount count={rsvp.guestCount} />
-            </>
-          ) : (
             <Form.FormBreak />
-          )}
+
+            <Form.SectionLabel label="Attending" />
+            <Form.FormRadioGroup
+              id="attending"
+              inputs={[
+                {
+                  id: 'yes',
+                  label: 'Yes',
+                },
+                {
+                  id: 'no',
+                  label: 'No',
+                },
+              ]}
+            />
+
+            {rsvp.attending === 'yes' ? (
+              <>
+                <Form.FormInput
+                  type="text"
+                  id="guestCount"
+                  label="Guest Count"
+                  size="2"
+                  maxLength="1"
+                  pattern="\d*"
+                />
+                <GuestCount count={rsvp.guestCount} />
+              </>
+            ) : (
+              <Form.FormBreak />
+            )}
+          </Form.ContentContainer>
           <Form.FormSubmit onSubmit={() => console.log('SUBMIT')}>
             Get Excited
           </Form.FormSubmit>

@@ -4,10 +4,11 @@ import { Input } from '../Input/Input';
 import { RadioGroup } from '../RadioGroup/RadioGroup';
 
 import {
-  Container,
+  ContentContainer,
   SectionContent,
   SectionLabel,
   FormBreak,
+  Container,
   Submit,
 } from './style';
 
@@ -34,7 +35,7 @@ const FormInput = React.memo(
           <Input
             onChange={onChange}
             value={formContent.id}
-            name={id}
+            id={id}
             type={type}
             size={size}
             maxLength={maxLength}
@@ -73,6 +74,7 @@ export const Form = ({ children, onChange, formContent }) => {
   );
 };
 
+Form.ContentContainer = ContentContainer;
 Form.FormInput = FormInput;
 Form.FormRadioGroup = FormRadioGroup;
 Form.FormBreak = FormBreak;

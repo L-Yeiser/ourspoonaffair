@@ -5,7 +5,7 @@ import { standards, colors } from 'themes';
 
 export const Input = styled.input({
   outline: 0,
-  padding: `${standards.padding} 0px`,
+  // padding: `${standards.paddingSmall} 0px`,
   fontSize: standards.body,
   flex: 1,
   color: colors.white,

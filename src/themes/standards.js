@@ -3,6 +3,7 @@ const zIndex = {
 };
 
 const spacing = {
+  paddingExtraSmall: '2px',
   paddingSmall: '5px',
   padding: '15px',
   paddingMedium: '25px',

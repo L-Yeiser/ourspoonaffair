@@ -4,9 +4,9 @@ import { RadioInput } from './style';
 
 export const RadioGroup = React.memo(({ id, inputs, onChange, value }) => {
   return inputs.map(({ id: inputId, label }) => (
-    <>
+    <React.Fragment key={inputId}>
       <RadioInput
-        checked={value === inputId}
+        defaultChecked={value === inputId}
         type="radio"
         id={inputId}
         name={id}
@@ -19,6 +19,6 @@ export const RadioGroup = React.memo(({ id, inputs, onChange, value }) => {
       >
         {label}
       </label>
-    </>
+    </React.Fragment>
   ));
 });
