@@ -11,17 +11,20 @@ const Links = ({ onClick }) => (
     <NavLink onClick={onClick} to="/">
       Home
     </NavLink>
+    <NavLink onClick={onClick} to="/aboutus">
+      About Us
+    </NavLink>
+    <NavLink onClick={onClick} to="/wedding">
+      Wedding
+    </NavLink>
+    <NavLink onClick={onClick} to="/lodging">
+      Lodging
+    </NavLink>
+    <NavLink onClick={onClick} to="/activities">
+      Activities
+    </NavLink>
     <NavLink onClick={onClick} to="/RSVP">
       RSVP
-    </NavLink>
-    <NavLink onClick={onClick} to="/events">
-      Events
-    </NavLink>
-    <NavLink onClick={onClick} to="/travel">
-      Travel
-    </NavLink>
-    <NavLink onClick={onClick} to="/thingsToDo">
-      Things to Do
     </NavLink>
     <NavLink onClick={onClick} to="registry">
       Registry
