@@ -84,6 +84,7 @@ const AppContainer = styled.div`
 `;
 
 const App = () => {
+  console.log(process.env.FIREBASE_DATABASE_URL);
   return (
     <React.StrictMode>
       <ThemeProvider theme={globalStyles}>

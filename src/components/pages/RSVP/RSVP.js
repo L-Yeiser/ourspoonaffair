@@ -1,5 +1,7 @@
 import React, { useState, useCallback } from 'react';
 
+import firebase from 'firebase';
+
 import { Form } from 'UI';
 import { Container, FormContainer } from './style';
 
@@ -28,6 +30,11 @@ export const RSVP = () => {
       ...update,
     }));
   }, []);
+
+  const submitRsvp = useCallback(() => {
+    const { email } = rsvp;
+    firebase.rsvps.doc(email).set(rsvp);
+  });
 
   return (
     <Container>
@@ -67,9 +74,7 @@ export const RSVP = () => {
               </>
             ) : null}
           </Form.ContentContainer>
-          <Form.FormSubmit onSubmit={() => console.log('SUBMIT')}>
-            Get Excited
-          </Form.FormSubmit>
+          <Form.FormSubmit onSubmit={submitRsvp}>Get Excited</Form.FormSubmit>
         </Form>
       </FormContainer>
     </Container>
