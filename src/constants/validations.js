@@ -19,7 +19,7 @@ validate.validators.guestCount = (
   return '';
 };
 
-export const validateRSVP = {
+export const RSVPValidations = {
   email: {
     email: {
       message: 'Email is not a valid email',

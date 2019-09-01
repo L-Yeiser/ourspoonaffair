@@ -70,4 +70,36 @@ export const Submit = styled.button`
   font-size: inherit;
   outline: 0;
   background: ${colors.white};
+  display: flex;
+  justify-content: center;
+`;
+
+export const Errors = styled.div`
+  border: 1px solid ${colors.error};
+  border-radius: ${standards.borderRadius};
+  padding: 0 ${standards.padding};
+  grid-column: 1 / 3;
+  margin: ${standards.marginMedium} 0 ${standards.margin} 0;
+
+  li {
+    color: ${colors.error};
+  }
+`;
+
+export const LoadingSpinner = styled.div`
+  border: 0.1em solid ${colors.grayLight}; /* Light grey */
+  border-top: 0.1em solid ${colors.grayDarkest}; /* Blue */
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  animation: spin 2s linear infinite;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 `;

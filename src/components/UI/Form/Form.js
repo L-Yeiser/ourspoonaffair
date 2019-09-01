@@ -10,11 +10,30 @@ import {
   FormBreak,
   Container,
   Submit,
+  Errors,
+  LoadingSpinner,
 } from './style';
 
 const FormContext = React.createContext();
 
-const FormSubmit = React.memo(({ onSubmit, children }) => (
+const FormErrors = React.memo(({ validations }) => {
+  if (!validations) {
+    return null;
+  }
+
+  const errorMessages = Object.values(validations);
+  return (
+    <Errors>
+      <ul>
+        {errorMessages.map(([message]) => (
+          <li key={message}>{message}</li>
+        ))}
+      </ul>
+    </Errors>
+  );
+});
+
+const FormSubmit = React.memo(({ onSubmit, children, submitting }) => (
   <Submit
     type="submit"
     onClick={e => {
@@ -22,7 +41,7 @@ const FormSubmit = React.memo(({ onSubmit, children }) => (
       onSubmit();
     }}
   >
-    {children}
+    {submitting ? <LoadingSpinner /> : children}
   </Submit>
 ));
 
@@ -48,7 +67,7 @@ const FormInput = React.memo(
   }
 );
 
-const FormRadioGroup = React.memo(({ id, inputs, value }) => {
+const FormRadioGroup = React.memo(({ id, inputs }) => {
   const { formContent = {}, onChange } = useContext(FormContext);
   return (
     <SectionContent>
@@ -81,3 +100,4 @@ Form.FormRadioGroup = FormRadioGroup;
 Form.FormBreak = FormBreak;
 Form.SectionLabel = SectionLabel;
 Form.FormSubmit = FormSubmit;
+Form.FormErrors = FormErrors;

@@ -4,7 +4,7 @@ import validate from 'validate.js';
 import firebase from 'firebase';
 
 import { Form } from 'UI';
-import { validateRSVP } from 'constants/validations';
+import { RSVPValidations } from 'constants/validations';
 import { stringToNumber } from 'utils/stringToNumber';
 
 import { Container, FormContainer } from './style';
@@ -29,24 +29,50 @@ const GuestCount = ({ count }) => {
 
 export const RSVP = () => {
   const [rsvp, setRsvp] = useState({});
-  const [errorMessages, setErrorMessages] = useState();
+  const [validations, setValidations] = useState();
+  const [submitting, setSubmitting] = useState(false);
 
-  const updateRsvp = useCallback(update => {
-    setRsvp(prev => ({
-      ...prev,
-      ...update,
-    }));
-  }, []);
+  const validateRSVP = (updatedRSVP = rsvp) => {
+    const invalidInputs = validate(updatedRSVP, RSVPValidations, {
+      fullMessages: false,
+    });
 
-  const submitRsvp = useCallback(() => {
+    setValidations(invalidInputs);
+
+    return invalidInputs;
+  };
+
+  const updateRsvp = useCallback(
+    update => {
+      setRsvp(prev => {
+        const updatedRSVP = {
+          ...prev,
+          ...update,
+        };
+
+        if (validations) {
+          validateRSVP(updatedRSVP);
+        }
+
+        console.log(updatedRSVP, validations);
+
+        return updateRsvp;
+      });
+    },
+    [rsvp, validations]
+  );
+
+  const submitRsvp = useCallback(async () => {
+    setSubmitting(true);
     const { email } = rsvp;
-    const validations = validate(rsvp, validateRSVP, { fullMessages: false });
+    const invalidInputs = validateRSVP();
 
-    if (validations) {
-      setErrorMessages(Object.values(validations));
-    } else {
-      firebase.rsvps.doc(email).set(rsvp);
+    if (!invalidInputs) {
+      await firebase.rsvps.doc(email).set(rsvp);
+      setRsvp({});
     }
+
+    setSubmitting(false);
   });
 
   return (
@@ -89,7 +115,10 @@ export const RSVP = () => {
               </>
             ) : null}
           </Form.ContentContainer>
-          <Form.FormSubmit onSubmit={submitRsvp}>Get Excited</Form.FormSubmit>
+          <Form.FormErrors validations={validations} />
+          <Form.FormSubmit onSubmit={submitRsvp} submitting={submitting}>
+            Get Excited
+          </Form.FormSubmit>
         </Form>
       </FormContainer>
     </Container>
