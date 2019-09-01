@@ -11,12 +11,6 @@ const config = {
   appId: process.env.FIREBASE_APP_ID,
 };
 
-// console.log(config);
-
-// firebase.initializeApp(config);
-
-// window.firebase = firebase;
-
 class Firebase {
   constructor() {
     firebase.initializeApp(config);

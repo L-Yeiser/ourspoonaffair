@@ -1,12 +1,17 @@
 import React, { useState, useCallback } from 'react';
+import validate from 'validate.js';
 
 import firebase from 'firebase';
 
 import { Form } from 'UI';
+import { validateRSVP } from 'constants/validations';
+import { stringToNumber } from 'utils/stringToNumber';
+
 import { Container, FormContainer } from './style';
 
-const GuestCount = ({ count }) =>
-  count && /\d/.test(count) ? (
+const GuestCount = ({ count }) => {
+  const numericCount = stringToNumber(count);
+  return numericCount ? (
     <>
       {Array(+count)
         .fill(true)
@@ -20,9 +25,11 @@ const GuestCount = ({ count }) =>
         ))}
     </>
   ) : null;
+};
 
 export const RSVP = () => {
   const [rsvp, setRsvp] = useState({});
+  const [errorMessages, setErrorMessages] = useState();
 
   const updateRsvp = useCallback(update => {
     setRsvp(prev => ({
@@ -33,7 +40,13 @@ export const RSVP = () => {
 
   const submitRsvp = useCallback(() => {
     const { email } = rsvp;
-    firebase.rsvps.doc(email).set(rsvp);
+    const validations = validate(rsvp, validateRSVP, { fullMessages: false });
+
+    if (validations) {
+      setErrorMessages(Object.values(validations));
+    } else {
+      firebase.rsvps.doc(email).set(rsvp);
+    }
   });
 
   return (
@@ -53,14 +66,16 @@ export const RSVP = () => {
                 {
                   id: 'yes',
                   label: 'Yes',
+                  value: true,
                 },
                 {
                   id: 'no',
                   label: 'No',
+                  value: false,
                 },
               ]}
             />
-            {rsvp.attending === 'yes' ? (
+            {rsvp.attending ? (
               <>
                 <Form.FormInput
                   type="text"

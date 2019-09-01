@@ -55,7 +55,7 @@ const FormRadioGroup = React.memo(({ id, inputs, value }) => {
       <RadioGroup
         id={id}
         inputs={inputs}
-        value={formContent[id]}
+        currentValue={formContent[id]}
         onChange={onChange}
       />
     </SectionContent>
