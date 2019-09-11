@@ -46,7 +46,7 @@ const FormSubmit = React.memo(({ onSubmit, children, submitting }) => (
 ));
 
 const FormInput = React.memo(
-  ({ id, label, type, size, maxLength, pattern }) => {
+  ({ id, label, type, size = '30', maxLength, pattern }) => {
     const { formContent = {}, onChange } = useContext(FormContext);
     return (
       <>

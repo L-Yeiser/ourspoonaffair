@@ -9,15 +9,18 @@ export const Container = styled.div`
 `;
 
 export const FormContainer = styled.div`
-  background: ${colors.blackAlpha};
-  color: ${colors.white};
+  /* background: ${colors.blackAlpha}; */
+  color: ${colors.black};
   border-radius: ${standards.borderRadius};
   overflow-y: scroll;
   padding: ${standards.padding} ${standards.paddingMedium};
   max-height: 50vh;
 
   button[type='submit'] {
-    margin-top: ${standards.margin};
+    margin-top: ${standards.marginLarge};
+    ${[constants.mediaQuery('small')]} {
+      margin-top: ${standards.margin};
+    }
   }
 
   header {

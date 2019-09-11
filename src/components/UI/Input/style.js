@@ -8,8 +8,8 @@ export const Input = styled.input({
   // padding: `${standards.paddingSmall} 0px`,
   fontSize: standards.body,
   flex: 1,
-  color: colors.white,
+  color: colors.black,
   border: 0,
   background: 'transparent',
-  borderBottom: `1px solid ${colors.white}`,
+  borderBottom: `1px solid ${colors.black}`,
 });

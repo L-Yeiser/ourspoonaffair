@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useReducer } from 'react';
 import validate from 'validate.js';
 
 import firebase from 'firebase';
@@ -42,21 +42,14 @@ export const RSVP = () => {
     return invalidInputs;
   };
 
+  // We need to clear validations here
   const updateRsvp = useCallback(
     update => {
       setRsvp(prev => {
-        const updatedRSVP = {
+        return {
           ...prev,
           ...update,
         };
-
-        if (validations) {
-          validateRSVP(updatedRSVP);
-        }
-
-        console.log(updatedRSVP, validations);
-
-        return updateRsvp;
       });
     },
     [rsvp, validations]

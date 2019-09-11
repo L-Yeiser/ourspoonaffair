@@ -69,9 +69,10 @@ export const Submit = styled.button`
   border-radius: ${standards.borderRadius};
   font-size: inherit;
   outline: 0;
-  background: ${colors.white};
+  background: ${colors.grayDark};
   display: flex;
   justify-content: center;
+  color: ${colors.white};
 `;
 
 export const Errors = styled.div`
@@ -87,8 +88,8 @@ export const Errors = styled.div`
 `;
 
 export const LoadingSpinner = styled.div`
-  border: 0.1em solid ${colors.grayLight}; /* Light grey */
-  border-top: 0.1em solid ${colors.grayDarkest}; /* Blue */
+  border: 0.1em solid rgb(180, 180, 180);
+  border-top: 0.1em solid ${colors.white};
   border-radius: 50%;
   width: 1em;
   height: 1em;

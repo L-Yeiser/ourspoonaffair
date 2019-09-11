@@ -15,7 +15,7 @@ export const RadioInput = styled.input`
     padding-left: 28px;
     cursor: pointer;
     display: inline-block;
-    color: ${colors.white};
+    color: ${colors.black};
   }
   &[type='radio'] + label:before,
   &[type='radio'] + label:before {
@@ -25,7 +25,7 @@ export const RadioInput = styled.input`
     top: 0;
     width: 18px;
     height: 18px;
-    border: 1px solid ${colors.white};
+    border: 1px solid ${colors.grayDarkest};
     border-radius: 100%;
     background: ${colors.white};
   }
