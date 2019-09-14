@@ -3,12 +3,17 @@
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.15",
     "@reach/router": "^1.2.1",
+    "add": "^2.0.6",
+    "contexts": "^0.0.0",
     "emotion-theming": "^10.0.14",
     "firebase": "^6.4.2",
     "lodash": "^4.17.15",
     "react": ">=16.3.0",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "15.x || 16.x || 16.4.0-alpha.0911da3",
-    "validate.js": "^0.13.1"
+    "validate.js": "^0.13.1",
+    "webfontloader": "^1.6.28",
+    "yarn": "^1.17.3"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
