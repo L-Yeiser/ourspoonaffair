@@ -5,23 +5,22 @@ import { ContentContainer } from 'UI';
 export const Activities = () => {
   return (
     <ContentContainer>
-      <h2>
+      <h2>Hiking Mt. Hood</h2>
+      <p>
+        Whether you want an arduous hike or a short stroll,{' '}
         <a href="https://traveloregon.com/things-to-do/destinations/parks-forests-wildlife-areas/mt-hood-hikers-bucket-list/">
-          Hiking Mt. Hood
-        </a>
-      </h2>
-      <p>
-        Whether you want an arduous hike or a short stroll, M. Hood delivers.
+          Mt. Hood
+        </a>{' '}
+        delivers.
       </p>
-      <h3>
-        <a href="https://www.oregonhikers.org/field_guide/Cooper_Spur_Hike">
-          Cooper Spur
-        </a>
-      </h3>
+      <h3>Cooper Spur</h3>
       <p>
-        This 6.6-mile round trip hike gains 2680 feet to expose views of Adams,
-        St. Helens, Rainer and a close-up of Elliot Glacier. The hike starts at
-        Cloud Cap trailhead, also an{' '}
+        <a href="https://www.oregonhikers.org/field_guide/Cooper_Spur_Hike">
+          This 6.6-mile
+        </a>{' '}
+        round trip hike gains 2680 feet to expose views of Adams, St. Helens,
+        Rainer and a close-up of Elliot Glacier. The hike starts at Cloud Cap
+        trailhead, also an{' '}
         <a href="https://www.oregonhikers.org/field_guide/Cloud_Cap_Trailhead">
           entry point to other great hikes
         </a>
@@ -31,15 +30,14 @@ export const Activities = () => {
         </a>
         is tortuous.
       </p>
-      <h3>
-        <a href="https://www.oregonhikers.org/field_guide/Tamanawas_Falls_Hike">
-          Tamanawas Falls
-        </a>
-      </h3>
+      <h3>Tamanawas Falls</h3>
       <p>
-        This 1.8-mile trail gains a mild 700 feet to a 150-foot waterfall along
-        Cold Spring Creek. It’s a classic for kids and great for dogs who like
-        ready access to a stream. The{' '}
+        <a href="https://www.oregonhikers.org/field_guide/Tamanawas_Falls_Hike">
+          This 1.8-mile trail
+        </a>{' '}
+        gains a mild 700 feet to a 150-foot waterfall along Cold Spring Creek.
+        It’s a classic for kids and great for dogs who like ready access to a
+        stream. The{' '}
         <a href="https://www.oregonhikers.org/field_guide/Sherwood_Trailhead">
           trailhead
         </a>{' '}
@@ -49,14 +47,13 @@ export const Activities = () => {
         </a>{' '}
         from Cooper Spur report.
       </p>
-      <h3>
-        <a href="https://www.oregonhikers.org/field_guide/Old_Salmon_River_Hike">
-          Salmon River Trail
-        </a>
-      </h3>
+      <h3>Salmon River Trail</h3>
       <p>
-        This out-and-back trail along the Salmon River takes you through old
-        growth Douglas Firs with virtually no climbing. The{' '}
+        <a href="https://www.oregonhikers.org/field_guide/Old_Salmon_River_Hike">
+          This out-and-back trail
+        </a>{' '}
+        along the Salmon River takes you through old growth Douglas Firs with
+        virtually no climbing. The{' '}
         <a href="https://www.oregonhikers.org/field_guide/Salmon_River_Trailhead">
           trailhead
         </a>{' '}
@@ -67,13 +64,12 @@ export const Activities = () => {
         from Cooper Spur, so plan for drive time!
       </p>
 
-      <h2>
-        <a href="https://hoodriverfruitloop.com/">Fruit Picking</a>
-      </h2>
+      <h2>Fruit Picking</h2>
       <p>
-        Known as the Fruit Loop, this route of u-pick fruit orchards is a
-        standard for visitors who like to bake pie, or can jam and applesauce.
-        Apples, pears corn and lavender are particularly perfect{' '}
+        Known as the <a href="https://hoodriverfruitloop.com/">Fruit Loop</a>,
+        this route of u-pick fruit orchards is a standard for visitors who like
+        to bake pie, or can jam and applesauce. Apples, pears corn and lavender
+        are particularly perfect{' '}
         <a href="http://hoodriverfruitloop.com/travel-tips/harvest-seasons">
           this time of year
         </a>
@@ -86,53 +82,48 @@ export const Activities = () => {
         and crisps.
       </p>
 
-      <h2>
-        <a href="https://www.gorgewine.com/">Wine Tasting</a>
-      </h2>
+      <h2>Wine Tasting</h2>
       <p>
-        From riverbed to trailhead, this wine-growing region includes vast
-        gradations of climate, earning it the name “world of wine in 40 miles.”
-        You might be here for the crush, or catch a band at one of more than 30
-        vineyards. A few tasting rooms to try include:
+        From riverbed to trailhead, this{' '}
+        <a href="https://www.gorgewine.com/">wine-growing region</a> includes
+        vast gradations of climate, earning it the name “world of wine in 40
+        miles.” You might be here for the crush, or catch a band at one of more
+        than 30 vineyards. A few tasting rooms to try include:
       </p>
-      <h3>
+      <h3>Wy’East Vineyards</h3>
+      <p>
+        Flex your bocci ball skills at{' '}
         <a href="https://www.wyeastvineyards.com/tasting-room">
-          Wy’East Vineyards
+          this Hood River Valley vineyard
         </a>
-      </h3>
-      <p>
-        Flex your bocci ball skills at this Hood River Valley vineyard, which
-        grows Pinot Noir, Pinot Gris and Chardonnay grapes. Open 11-5 daily.
+        , which grows Pinot Noir, Pinot Gris and Chardonnay grapes. Open 11-5
+        daily.
       </p>
-      <h3>
+      <h3>Phelps Creek Vineyard</h3>
+      <p>
+        Take your picnic to{' '}
         <a href="https://www.phelpscreekvineyards.com/tasting-room/">
-          Phelps Creek Vineyard
+          this tucked-away tasting room
         </a>
-      </h3>
-      <p>
-        Take your picnic to this tucked-away tasting room, located a mile from
-        its vineyards and on the Hood River Golf Course. Primarily pinot noir.
-        Open 11-5 daily.
+        , located a mile from its vineyards and on the Hood River Golf Course.
+        Primarily pinot noir. Open 11-5 daily.
       </p>
-      <h3>
+      <h3>Marchesi Vineyards</h3>
+      <p>
         <a href="http://www.marchesivineyards.com/Tasting_Room.html">
-          Marchesi Vineyards
+          This Italian vineyard grows
         </a>
-      </h3>
-      <p>
-        This Italian vineyard grows, well, Italian varieties. Try a Sangiovese,
-        Prosecco, Moscato or Nebbiolo on their wide patio with views of the
-        hills above Hood River. Open 11-6 daily.
+        , well, Italian varieties. Try a Sangiovese, Prosecco, Moscato or
+        Nebbiolo on their wide patio with views of the hills above Hood River.
+        Open 11-6 daily.
       </p>
-      <h3>
-        <a href="https://www.thepinesvineyard.com/vineyard/wine-tasting/">
-          The Pines 1852
-        </a>
-      </h3>
+      <h3>The Pines 1852</h3>
       <p>
-        This Hood River vineyard produces a wide variety of wines, from
-        Chardonnay to Cabernet and Syrah to Zinfandel. Variable hours, reliably
-        open 12-5 Wednesday-Monday.
+        <a href="https://www.thepinesvineyard.com/vineyard/wine-tasting/">
+          This Hood River vineyard
+        </a>
+        produces a wide variety of wines, from Chardonnay to Cabernet and Syrah
+        to Zinfandel. Variable hours, reliably open 12-5 Wednesday-Monday.
       </p>
       <p>
         If you want a little adventure with your wine,{' '}
@@ -140,13 +131,13 @@ export const Activities = () => {
         with MountNbarreL.
       </p>
 
-      <h2>
-        <a href="https://www.cooperspur.com/amenities/">Relax!</a>
-      </h2>
+      <h2>Relax!</h2>
       <p>
-        You might prefer a mellow weekend, and in that case take a short drive
-        to the town of Hood River — a destination on its own. Tourists come for
-        the <a href="https://hoodriver.org/shop/">shops</a>,{' '}
+        You might prefer a{' '}
+        <a href="https://www.cooperspur.com/amenities/">mellow weekend</a>, and
+        in that case take a short drive to the town of Hood River — a
+        destination on its own. Tourists come for the{' '}
+        <a href="https://hoodriver.org/shop/">shops</a>,{' '}
         <a href="https://eggrivercafe.com/">breakfasts with a twist</a>, and{' '}
         <a href="http://www.doppiohoodriver.com/">good coffee</a>.
       </p>

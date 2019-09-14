@@ -30,7 +30,7 @@ const GuestCount = ({ count }) => {
 };
 
 export const RSVP = () => {
-  const [form, setForm] = useMergeState({ rsvp: {}, validations: {} });
+  const [form, mergeState] = useMergeState({ rsvp: {}, validations: {} });
   const [submitting, setSubmitting] = useState(false);
 
   const validateRSVP = rsvp => {
@@ -40,7 +40,7 @@ export const RSVP = () => {
   };
 
   const updateRsvp = useCallback(update => {
-    setForm(prevForm => {
+    mergeState(prevForm => {
       const rsvp = {
         ...prevForm.rsvp,
         ...update,
@@ -64,9 +64,9 @@ export const RSVP = () => {
 
     if (!validations) {
       await firebase.rsvps.doc(rsvp.email).set(rsvp);
-      setForm({ rsvp: {}, validations: {} });
+      mergeState({ rsvp: {}, validations: {} });
     } else {
-      setForm({ validations });
+      mergeState({ validations });
     }
 
     setSubmitting(false);
