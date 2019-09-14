@@ -74,8 +74,6 @@ export const RSVP = () => {
     setSubmitting(false);
   }, [form]);
 
-  console.log(form);
-
   return (
     <Container>
       <FormContainer>
