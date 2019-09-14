@@ -5,7 +5,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router } from '@reach/router';
 import styled from '@emotion/styled';
-import { ThemeProvider } from 'emotion-theming';
 
 import { globalStyles, standards, colors } from 'themes';
 
@@ -86,20 +85,18 @@ const AppContainer = styled.div`
 const App = () => {
   return (
     <React.StrictMode>
-      <ThemeProvider theme={globalStyles}>
-        <AppContainer>
-          <NavBar />
-          <Router>
-            <Home default path="/" />
-            <AboutUs path="/aboutus" />
-            <Wedding path="/wedding" />
-            <Lodging path="lodging" />
-            <Activities path="activities" />
-            <RSVP path="/RSVP" />
-            <Registry path="registry" />
-          </Router>
-        </AppContainer>
-      </ThemeProvider>
+      <AppContainer>
+        <NavBar />
+        <Router>
+          <Home default path="/" />
+          <AboutUs path="/aboutus" />
+          <Wedding path="/wedding" />
+          <Lodging path="lodging" />
+          <Activities path="activities" />
+          <RSVP path="/RSVP" />
+          <Registry path="registry" />
+        </Router>
+      </AppContainer>
     </React.StrictMode>
   );
 };
