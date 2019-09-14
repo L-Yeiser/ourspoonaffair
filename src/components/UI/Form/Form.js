@@ -1,4 +1,5 @@
 import React, { useMemo, useContext } from 'react';
+import { isEmpty } from 'lodash';
 
 import { Input } from '../Input/Input';
 import { RadioGroup } from '../RadioGroup/RadioGroup';
@@ -17,7 +18,7 @@ import {
 const FormContext = React.createContext();
 
 const FormErrors = React.memo(({ validations }) => {
-  if (!validations) {
+  if (isEmpty(validations)) {
     return null;
   }
 

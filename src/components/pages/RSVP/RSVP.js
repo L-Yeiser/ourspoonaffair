@@ -1,8 +1,10 @@
 import React, { useState, useCallback, useReducer } from 'react';
 import validate from 'validate.js';
+import { isEmpty } from 'lodash';
 
 import firebase from 'firebase';
 
+import { useMergeState } from 'Hooks';
 import { Form } from 'UI';
 import { RSVPValidations } from 'constants/validations';
 import { stringToNumber } from 'utils/stringToNumber';
@@ -28,41 +30,43 @@ const GuestCount = ({ count }) => {
 };
 
 export const RSVP = () => {
-  const [rsvp, setRsvp] = useState({});
-  const [validations, setValidations] = useState();
+  const [form, setForm] = useMergeState({ rsvp: {}, validations: {} });
   const [submitting, setSubmitting] = useState(false);
 
-  const validateRSVP = (updatedRSVP = rsvp) => {
-    const invalidInputs = validate(updatedRSVP, RSVPValidations, {
+  const validateRSVP = rsvp => {
+    return validate(rsvp, RSVPValidations, {
       fullMessages: false,
     });
-
-    setValidations(invalidInputs);
-
-    return invalidInputs;
   };
 
-  // We need to clear validations here
-  const updateRsvp = useCallback(
-    update => {
-      setRsvp(prev => {
-        return {
-          ...prev,
-          ...update,
-        };
-      });
-    },
-    [rsvp, validations]
-  );
+  const updateRsvp = useCallback(update => {
+    setForm(prevForm => {
+      const rsvp = {
+        ...prevForm.rsvp,
+        ...update,
+      };
+      return {
+        rsvp,
+        ...(isEmpty(form.validations)
+          ? {}
+          : {
+              validations: validateRSVP(rsvp),
+            }),
+      };
+    });
+  });
 
   const submitRsvp = useCallback(async () => {
     setSubmitting(true);
-    const { email } = rsvp;
-    const invalidInputs = validateRSVP();
+    const { rsvp } = form;
 
-    if (!invalidInputs) {
-      await firebase.rsvps.doc(email).set(rsvp);
-      setRsvp({});
+    const validations = validateRSVP(rsvp);
+
+    if (!validations) {
+      await firebase.rsvps.doc(rsvp.email).set(rsvp);
+      setForm({ rsvp: {}, validations: {} });
+    } else {
+      setForm({ validations });
     }
 
     setSubmitting(false);
@@ -74,7 +78,7 @@ export const RSVP = () => {
         <header>
           <h2>RSVP</h2>
         </header>
-        <Form onChange={updateRsvp} formContent={rsvp}>
+        <Form onChange={updateRsvp} formContent={form.rsvp}>
           <Form.ContentContainer>
             <Form.FormInput id="name" label="Full Name" type="text" />
             <Form.FormInput id="email" label="Email" type="email" />
@@ -94,7 +98,7 @@ export const RSVP = () => {
                 },
               ]}
             />
-            {rsvp.attending ? (
+            {form.rsvp.attending ? (
               <>
                 <Form.FormInput
                   type="text"
@@ -104,11 +108,11 @@ export const RSVP = () => {
                   maxLength="1"
                   pattern="\d*"
                 />
-                <GuestCount count={rsvp.guestCount} />
+                <GuestCount count={form.rsvp.guestCount} />
               </>
             ) : null}
           </Form.ContentContainer>
-          <Form.FormErrors validations={validations} />
+          <Form.FormErrors validations={form.validations} />
           <Form.FormSubmit onSubmit={submitRsvp} submitting={submitting}>
             Get Excited
           </Form.FormSubmit>

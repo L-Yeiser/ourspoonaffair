@@ -5,6 +5,7 @@
     "@reach/router": "^1.2.1",
     "emotion-theming": "^10.0.14",
     "firebase": "^6.4.2",
+    "lodash": "^4.17.15",
     "react": ">=16.3.0",
     "react-dom": "15.x || 16.x || 16.4.0-alpha.0911da3",
     "validate.js": "^0.13.1"
