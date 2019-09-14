@@ -6,7 +6,9 @@ import ReactDOM from 'react-dom';
 import { Router } from '@reach/router';
 import styled from '@emotion/styled';
 
-import { globalStyles, standards, colors } from 'themes';
+import { ImagesProvider } from 'contexts/images';
+
+import { standards, colors } from 'themes';
 
 import image from 'assets/background.jpg';
 
@@ -87,15 +89,17 @@ const App = () => {
     <React.StrictMode>
       <AppContainer>
         <NavBar />
-        <Router>
-          <Home default path="/" />
-          <AboutUs path="/aboutus" />
-          <Wedding path="/wedding" />
-          <Lodging path="lodging" />
-          <Activities path="activities" />
-          <RSVP path="/RSVP" />
-          <Registry path="registry" />
-        </Router>
+        <ImagesProvider>
+          <Router>
+            <Home default path="/" />
+            <AboutUs path="/aboutus" />
+            <Wedding path="/wedding" />
+            <Lodging path="lodging" />
+            <Activities path="activities" />
+            <RSVP path="/RSVP" />
+            <Registry path="registry" />
+          </Router>
+        </ImagesProvider>
       </AppContainer>
     </React.StrictMode>
   );

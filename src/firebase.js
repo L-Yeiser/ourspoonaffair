@@ -1,6 +1,6 @@
 import firebase from 'firebase/app';
-import 'firebase/database';
 import 'firebase/firestore';
+import 'firebase/storage';
 
 const config = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -16,6 +16,7 @@ class Firebase {
     firebase.initializeApp(config);
     window.firebase = firebase;
     this.firestore = firebase.firestore();
+    this.storage = firebase.storage();
     this.rsvps = this.firestore.collection('rsvp');
   }
 }
