@@ -13,7 +13,7 @@ export const useMergeState = initialState => {
       } else {
         return prevState;
       }
-
+      console.log('UPDATES', updates);
       return Object.entries(updates).reduce(
         (memo, [key, value]) => {
           memo[key] = value;
@@ -24,7 +24,7 @@ export const useMergeState = initialState => {
         }
       );
     });
-  });
+  }, []);
 
   return [state, mergeState];
 };

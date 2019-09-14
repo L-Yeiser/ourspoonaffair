@@ -45,16 +45,18 @@ export const RSVP = () => {
         ...prevForm.rsvp,
         ...update,
       };
+      const validations = validateRSVP(rsvp);
+
       return {
         rsvp,
-        ...(isEmpty(form.validations)
+        ...(isEmpty(prevForm.validations)
           ? {}
           : {
-              validations: validateRSVP(rsvp),
+              validations,
             }),
       };
     });
-  });
+  }, []);
 
   const submitRsvp = useCallback(async () => {
     setSubmitting(true);
@@ -70,7 +72,9 @@ export const RSVP = () => {
     }
 
     setSubmitting(false);
-  });
+  }, [form]);
+
+  console.log(form);
 
   return (
     <Container>
