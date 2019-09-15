@@ -1,17 +1,34 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const nodemailer = require('nodemailer');
-const cors = require('cors')({ origin: true });
+const sgTransport = require('nodemailer-sendgrid-transport');
 
 admin.initializeApp();
 
-let transporter = nodemailer.createTransport({
-  service: 'gmail',
+const options = {
   auth: {
-    user: functions.config().email.address,
-    pass: functions.config().email.password,
+    api_user: functions.config().sengrid.user,
+    api_key: functions.config().sengrid.password,
   },
-});
+};
+
+const client = nodemailer.createTransport(sgTransport(options));
+
+var email = {
+  from: functions.config().email.address,
+  to: 'mr.walrus@foo.com',
+  subject: 'Hello',
+  text: 'Hello world',
+  html: '<b>Hello world</b>',
+};
+
+// let transporter = nodemailer.createTransport({
+//   service: 'gmail',
+//   auth: {
+//     user: functions.config().email.address,
+//     pass: functions.config().email.password,
+//   },
+// });
 
 exports.confirmRSVP = functions.firestore
   .document('rsvp/{email}')
@@ -21,17 +38,24 @@ exports.confirmRSVP = functions.firestore
     console.log('WE WANT TO SEND EMAIL TO', rsvp.email);
     console.log('EMAIL SENT FROM', functions.config().email.address);
 
-    const mailOptions = {
+    const email = {
       from: functions.config().email.address,
-      cc: functions.config().email.cc,
       to: rsvp.email,
-      subject: 'Thanks for the RSVP',
-      text: 'Thanks for the RSVP. This is where Kate gets busy',
-      // html: `<p style="font-size: 16px;">Pickle Riiiiiiiiiiiiiiiick!!</p>
-      //           <br />
-      //           <img src="https://images.prod.meredith.com/product/fc8754735c8a9b4aebb786278e7265a5/1538025388228/l/rick-and-morty-pickle-rick-sticker" />
-      //       `,
+      subject: 'Hello From sengrid',
+      text: 'Hello world',
+      html: '<b>Hello world this is in the html</b>',
     };
 
-    return transporter.sendMail(mailOptions);
+    return client.sendMail(email, (err, info) => {
+      console.log('WTF');
+      console.log(err);
+      console.log(info);
+      if (err) {
+        console.log(`Error sending email to ${rsvp.email}`, error);
+        return false;
+      } else {
+        console.log('Message sent: to' + rsvp + email + 'info' + info.response);
+        return true;
+      }
+    });
   });
