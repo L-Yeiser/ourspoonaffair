@@ -3,6 +3,8 @@ const admin = require('firebase-admin');
 const nodemailer = require('nodemailer');
 const sgTransport = require('nodemailer-sendgrid-transport');
 
+const { confirm, decline } = require('./emails');
+
 admin.initializeApp();
 
 const options = {
@@ -14,22 +16,6 @@ const options = {
 
 const client = nodemailer.createTransport(sgTransport(options));
 
-var email = {
-  from: functions.config().email.address,
-  to: 'mr.walrus@foo.com',
-  subject: 'Hello',
-  text: 'Hello world',
-  html: '<b>Hello world</b>',
-};
-
-// let transporter = nodemailer.createTransport({
-//   service: 'gmail',
-//   auth: {
-//     user: functions.config().email.address,
-//     pass: functions.config().email.password,
-//   },
-// });
-
 exports.confirmRSVP = functions.firestore
   .document('rsvp/{email}')
   .onCreate((snap, context) => {
@@ -37,13 +23,17 @@ exports.confirmRSVP = functions.firestore
 
     console.log('WE WANT TO SEND EMAIL TO', rsvp.email);
     console.log('EMAIL SENT FROM', functions.config().email.address);
+    const name = (rsvp.name || '').split(' ')[0];
+
+    console.log('WTF WTF', name);
 
     const email = {
       from: functions.config().email.address,
       to: rsvp.email,
-      subject: 'Hello From sengrid',
-      text: 'Hello world',
-      html: '<b>Hello world this is in the html</b>',
+      subject: rsvp.attending
+        ? 'Get ready for Yeiser Willson 2020'
+        : 'We will miss you at our wedding',
+      html: rsvp.attending ? confirm(name) : decline(name),
     };
 
     return client.sendMail(email, (err, info) => {
