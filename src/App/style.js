@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import styled from '@emotion/styled';
 
-import { standards, colors } from 'themes';
+import { standards, colors, constants } from 'themes';
 
 import image from 'assets/background.jpg';
 
@@ -36,6 +36,10 @@ export const AppContainer = styled.div`
   
   p {
     font-size: ${standards.body};
+    margin: 0.5rem 0;
+    ${[constants.mediaQuery('small')]} {
+      margin: 0.25rem 0;
+    }
   }
 
   a {

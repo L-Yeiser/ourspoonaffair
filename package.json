@@ -4,6 +4,7 @@
     "@emotion/styled": "^10.0.15",
     "@reach/router": "^1.2.1",
     "autoprefixer": "^9.6.1",
+    "components": "^0.1.0",
     "core-js": "^3.2.1",
     "emotion-theming": "^10.0.14",
     "firebase": "^6.4.2",

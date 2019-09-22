@@ -1,11 +1,10 @@
 /** @jsx jsx */
 import styled from '@emotion/styled';
 
-import { standards, constants } from 'themes';
+import { constants, standards } from 'themes';
 
 export const Container = styled.div`
   margin-top: ${standards.marginLarge};
-  padding: ${standards.padding};
   display: flex;
   flex-direction: column;
   justify-content: center;

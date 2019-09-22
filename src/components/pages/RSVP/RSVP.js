@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useReducer } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import validate from 'validate.js';
 import { isEmpty } from 'lodash';
 
@@ -32,6 +32,7 @@ const GuestCount = ({ count }) => {
 export const RSVP = () => {
   const [form, mergeState] = useMergeState({ rsvp: {}, validations: {} });
   const [submitting, setSubmitting] = useState(false);
+  const guestCountEl = useRef(null);
 
   const validateRSVP = rsvp => {
     return validate(rsvp, RSVPValidations, {
@@ -39,24 +40,34 @@ export const RSVP = () => {
     });
   };
 
-  const updateRsvp = useCallback(update => {
-    mergeState(prevForm => {
-      const rsvp = {
-        ...prevForm.rsvp,
-        ...update,
-      };
-      const validations = validateRSVP(rsvp);
+  const updateRsvp = useCallback(
+    update => {
+      mergeState(prevForm => {
+        const rsvp = {
+          ...prevForm.rsvp,
+          ...update,
+        };
+        const validations = validateRSVP(rsvp);
+        const { current: guestCount } = guestCountEl;
 
-      return {
-        rsvp,
-        ...(isEmpty(prevForm.validations)
-          ? {}
-          : {
-              validations,
-            }),
-      };
-    });
-  }, []);
+        if (guestCount && !prevForm.guestCount) {
+          guestCount.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
+        }
+        return {
+          rsvp,
+          ...(isEmpty(prevForm.validations)
+            ? {}
+            : {
+                validations,
+              }),
+        };
+      });
+    },
+    [guestCountEl]
+  );
 
   const submitRsvp = useCallback(async () => {
     setSubmitting(true);
@@ -109,6 +120,7 @@ export const RSVP = () => {
                   size="2"
                   maxLength="1"
                   pattern="\d*"
+                  inputRef={guestCountEl}
                 />
                 <GuestCount count={form.rsvp.guestCount} />
               </>

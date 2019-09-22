@@ -8,15 +8,15 @@ import { Router } from '@reach/router';
 
 import { ImagesProvider } from 'contexts/images';
 
-import { NavBar } from 'components/NavBar';
+import { TopNav } from 'components/Navigation';
 import {
-  Home,
   AboutUs,
-  Wedding,
-  Lodging,
   Activities,
+  Home,
+  Lodging,
   RSVP,
   Registry,
+  Wedding,
 } from 'pages';
 import { AppContainer } from './style';
 
@@ -24,15 +24,15 @@ const App = () => {
   return (
     <React.StrictMode>
       <AppContainer>
-        <NavBar />
+        <TopNav />
         <ImagesProvider>
           <Router>
             <Home default path="/" />
-            <AboutUs path="/aboutus" />
-            <Wedding path="/wedding" />
+            <AboutUs path="aboutus" />
+            <Wedding path="wedding" />
             <Lodging path="lodging" />
             <Activities path="activities" />
-            <RSVP path="/RSVP" />
+            <RSVP path="RSVP" />
             <Registry path="registry" />
           </Router>
         </ImagesProvider>

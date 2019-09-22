@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ContentContainer } from 'UI';
 
-export const Registry = props => (
+export const Registry = () => (
   <ContentContainer>
     <p>
       As we start this new chapter of our life together and move into a smaller

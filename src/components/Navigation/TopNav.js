@@ -32,7 +32,7 @@ const Links = ({ onClick }) => (
   </>
 );
 
-export const NavBar = () => {
+export const TopNav = () => {
   const [isMenuOpen, toggleMenu] = useToggleState(false);
 
   return (

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 
-import { standards } from 'themes';
+import { standards, constants } from 'themes';
 
 export const ContentContainer = ({ children }) => (
   <div
@@ -13,15 +13,22 @@ export const ContentContainer = ({ children }) => (
   >
     <div
       css={{
-        overflow: 'scroll',
+        overflowY: 'scroll',
+        overflowX: 'hidden',
         height: 'calc(72vh - 5.5rem)',
         maxWidth: '625px',
-        padding: `0 ${standards.padding}`,
+        margin: `0 ${standards.padding}`,
         'p + h2, ul + h2': {
           marginTop: standards.marginLarge,
+          [constants.mediaQuery('small')]: {
+            marginTop: standards.marginMedium,
+          },
         },
         'p + h3': {
           marginTop: standards.marginMedium,
+          [constants.mediaQuery('small')]: {
+            marginTop: standards.margin,
+          },
         },
       }}
     >
@@ -33,7 +40,7 @@ export const ContentContainer = ({ children }) => (
           transform: 'translateX(-50%)',
           bottom: 0,
           width: '625px',
-          '@media (max-width: 625px)': {
+          [constants.mediaQuery('small')]: {
             width: '100%',
           },
           height: '1rem',

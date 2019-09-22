@@ -3,7 +3,7 @@ import React from 'react';
 import { Input as StyledInput } from './style';
 
 export const Input = React.memo(
-  ({ id, type, size, maxLength, pattern, onChange, value }) => {
+  ({ id, type, size, maxLength, pattern, onChange, value, inputRef }) => {
     return (
       <StyledInput
         onChange={({ target }) => onChange({ [id]: target.value })}
@@ -13,6 +13,7 @@ export const Input = React.memo(
         size={size}
         maxLength={maxLength}
         pattern={pattern}
+        ref={inputRef}
       />
     );
   }
