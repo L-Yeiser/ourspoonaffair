@@ -1,30 +1,11 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
-import 'core-js/stable';
-
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Router } from '@reach/router';
 import styled from '@emotion/styled';
-
-import { ImagesProvider } from 'contexts/images';
 
 import { standards, colors } from 'themes';
 
 import image from 'assets/background.jpg';
 
-import { NavBar } from 'components/NavBar';
-import {
-  Home,
-  AboutUs,
-  Wedding,
-  Lodging,
-  Activities,
-  RSVP,
-  Registry,
-} from 'pages';
-
-const AppContainer = styled.div`
+export const AppContainer = styled.div`
   color: ${colors.black};
   font-family: 'Montserrat', sans-serif;
   background: url(${image}) no-repeat center center fixed;
@@ -84,26 +65,3 @@ const AppContainer = styled.div`
     }
   }
 `;
-
-const App = () => {
-  return (
-    <React.StrictMode>
-      <AppContainer>
-        <NavBar />
-        <ImagesProvider>
-          <Router>
-            <Home default path="/" />
-            <AboutUs path="/aboutus" />
-            <Wedding path="/wedding" />
-            <Lodging path="lodging" />
-            <Activities path="activities" />
-            <RSVP path="/RSVP" />
-            <Registry path="registry" />
-          </Router>
-        </ImagesProvider>
-      </AppContainer>
-    </React.StrictMode>
-  );
-};
-
-ReactDOM.render(<App />, document.getElementById('root'));
