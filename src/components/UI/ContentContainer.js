@@ -37,7 +37,6 @@ export const ContentContainer = ({ children }) => (
             width: '100%',
           },
           height: '1rem',
-          // // TOP 200
           background: `linear-gradient(
               to bottom,
               rgba(0,0,0,0) 0%,

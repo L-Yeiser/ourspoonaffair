@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
+import 'core-js/stable';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
