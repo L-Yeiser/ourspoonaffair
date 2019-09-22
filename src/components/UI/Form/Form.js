@@ -8,7 +8,6 @@ import {
   ContentContainer,
   SectionContent,
   SectionLabel,
-  FormBreak,
   Container,
   Submit,
   Errors,
@@ -97,7 +96,6 @@ export const Form = ({ children, onChange, formContent }) => {
 Form.ContentContainer = ContentContainer;
 Form.FormInput = FormInput;
 Form.FormRadioGroup = FormRadioGroup;
-Form.FormBreak = FormBreak;
 Form.SectionLabel = SectionLabel;
 Form.FormSubmit = FormSubmit;
 Form.FormErrors = FormErrors;

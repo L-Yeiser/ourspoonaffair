@@ -28,8 +28,6 @@ export const SectionContent = styled.div({
   },
 });
 
-export const FormBreak = styled.div``;
-
 export const ContentContainer = styled.div`
   display: grid;
   /* grid-template-columns: auto auto; */
@@ -39,7 +37,6 @@ export const ContentContainer = styled.div`
   ${[constants.mediaQuery('small')]} {
     grid-row-gap: 0;
     grid-auto-rows: auto auto;
-    grid-gap: 
     grid-template-columns: auto;
   }
 
@@ -73,6 +70,7 @@ export const Submit = styled.button`
   display: flex;
   justify-content: center;
   color: ${colors.white};
+  border: 0;
 `;
 
 export const Errors = styled.div`
