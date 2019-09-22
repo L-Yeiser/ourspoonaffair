@@ -70,7 +70,6 @@ const FormInput = React.memo(
 
 const FormRadioGroup = React.memo(({ id, inputs }) => {
   const { formContent = {}, onChange } = useContext(FormContext);
-  console.log('WTF', formContent, formContent[id], id);
   return (
     <SectionContent>
       <RadioGroup

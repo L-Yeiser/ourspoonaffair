@@ -20,12 +20,7 @@ exports.confirmRSVP = functions.firestore
   .document('rsvp/{email}')
   .onCreate((snap, context) => {
     const rsvp = snap.data();
-
-    console.log('WE WANT TO SEND EMAIL TO', rsvp.email);
-    console.log('EMAIL SENT FROM', functions.config().email.address);
     const name = (rsvp.name || '').split(' ')[0];
-
-    console.log('WTF WTF', name);
 
     const email = {
       from: functions.config().email.address,
@@ -37,9 +32,6 @@ exports.confirmRSVP = functions.firestore
     };
 
     return client.sendMail(email, (err, info) => {
-      console.log('WTF');
-      console.log(err);
-      console.log(info);
       if (err) {
         console.log(`Error sending email to ${rsvp.email}`, error);
         return false;

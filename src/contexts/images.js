@@ -9,13 +9,17 @@ export const ImagesProvider = ({ children }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const imageBucket = await firebase.storage.ref('images');
-      const { items: imageRefs = [] } = (await imageBucket.listAll()) || {};
-      const downloadUrls = await Promise.all(
-        imageRefs.map(ref => ref.getDownloadURL())
-      );
+      try {
+        const imageBucket = await firebase.storage.ref('images');
+        const { items: imageRefs = [] } = (await imageBucket.listAll()) || {};
+        const downloadUrls = await Promise.all(
+          imageRefs.map(ref => ref.getDownloadURL())
+        );
 
-      setImages(downloadUrls);
+        setImages(downloadUrls);
+      } catch (error) {
+        //
+      }
     };
 
     fetchData();
