@@ -18,10 +18,11 @@ export const Wedding = () => {
         you to be comfortable.
       </p>
       <h2>Rehearsal Dinner</h2>
+      <p>6:30 p.m., Friday, Sept. 4</p>
       <p>
-        Friends and family arriving in Mt. Hood Friday Sept. 4 are welcome to
-        join us for a casual picnic dinner around 6:30 p.m. on the lawn outside
-        Cooper Spur’s Crooked Tree Tavern.
+        Friends and family arriving in Mt. Hood on Friday are welcome to join us
+        for a casual picnic dinner on the lawn outside Cooper Spur’s Crooked
+        Tree Tavern.
       </p>
     </ContentContainer>
   );

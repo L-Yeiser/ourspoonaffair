@@ -36,19 +36,5 @@ export const Registry = () => (
         <a href="https://oddmaninn.org/donate/">Odd Man Inn</a>
       </li>
     </ul>
-    <h2>A Honeymoon Adventure</h2>
-    <p>
-      This fall of 2020 we will road trip through the southwest United States,
-      to climb in Joshua Tree and Red Rocks, bike through the high deserts of
-      Eastern Oregon and below the cliffs of Yosemite, and soak in every hot
-      spring along the way.
-    </p>
-    <p>
-      For those who feel compelled, we would invite you to{' '}
-      <a href="https://www.theknot.com/us/kate-willson-and-lauren-yeiser-sep-2020/registry">
-        contribute to our honeymoon fund
-      </a>
-      .
-    </p>
   </ContentContainer>
 );

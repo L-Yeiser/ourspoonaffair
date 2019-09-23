@@ -7,22 +7,29 @@ export const Lodging = () => {
     <ContentContainer>
       <h2>Cooper Spur Mountain Resort</h2>
       <p>
-        We have reserved the lodging at{' '}
-        <a href="https://www.cooperspur.com/">Cooper Spur</a>, where we’ll also
-        hold the rehearsal dinner, ceremony and reception. A restaurant on site
-        offers food and drinks, and all cabins include full kitchens. There are
-        two hot tubs and a fire pit on site, as well as access to trails. These
-        accommodations require friends and family to share cabins. If you’re
-        interested, we would love to have you join us. Let us know in your RSVP
-        or drop us a line.
+        We have reserved all of the facilities at{' '}
+        <a href="https://www.cooperspur.com/">Cooper Spur Resort</a>,including
+        the rooms, hoping that this allows the group more social time together
+        and spares travelers from having to find and pay for a room at some
+        off-site location. We’ll prioritize folks traveling from out of the
+        region.
       </p>
+      <p>
+        The rooms are a mix of cabins, condos and more traditional hotel rooms.
+        With limited space, we’ll be grouping guests together. An early RSVP
+        will help us make those arrangements.
+      </p>
+      <p>
+        For those of you who want to make other plans, options might include:
+      </p>
+
       <h2>Timberline Lodge</h2>
       <p>
-        For those looking to splurge,{' '}
-        <a href="https://www.timberlinelodge.com/">this historic lodge</a> on
-        the side face of Mt. Hood boasts seven restaurants and bars, direct
-        access to the Timberline trail, and ascents to Mt. Hood’s sulfurious
-        Devil’s Kitchen.
+        Interested in a history lesson with your pinot noir? This Great
+        Depression era <a href="https://www.timberlinelodge.com/">lodge</a> on
+        the south face of Mt. Hood is a National Historic Landmark. It also
+        boasts seven restaurants and bars, direct access to the Timberline
+        trail, and ascents to Mt. Hood’s sulfurious Devil’s Kitchen.
       </p>
       <h2>Mt. Hood area Airbnb</h2>
       <p>

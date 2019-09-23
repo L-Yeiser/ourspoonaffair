@@ -14,17 +14,17 @@ export const AboutUs = () => {
       <Container>
         <h2>How We Met</h2>
         <p>
-          Lauren and Kate met in the spring of 2017. When Lauren needed a pair
-          of crampon to hike up Mount St. Helens, their mutual friend Julia
+          Lauren and Kate met in the spring of 2017. Lauren needed a pair of
+          crampons to hike up Mount St. Helens,and their mutual friend Julia
           suggested she reach out to Kate. They met on Kate’s front porch.
         </p>
         <p>
-          We both knew early that we had found our best friend and the person we
-          wanted to spend a lifetime with.
+          Each knew early that she had found her best friend and the person she
+          wanted to be with for a lifetime.
         </p>
         <p>
           Kate fell for Lauren’s adventurous spirit and steady character. Lauren
-          fell for Kate’s positivity and unflappability. People often joked at
+          fell for Kate’s positivity and unflappability. People often joke at
           their similarities but they quickly realized they were similar in all
           the big and small ways that make life together easy — tidy at home,
           mild in conflict, moving at a hummingbird pace.

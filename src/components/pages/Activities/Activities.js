@@ -88,8 +88,12 @@ export const Activities = () => {
         <a href="https://www.gorgewine.com/">wine-growing region</a> includes
         vast gradations of climate, earning it the name “world of wine in 40
         miles.” You might be here for the crush, or catch a band at one of more
-        than 30 vineyards. A few tasting rooms to try include:
+        than 30 vineyards. If you want a little adventure with your wine,{' '}
+        <a href="https://mountnbarrel.com/winery-tours/">book a bike tour</a>{' '}
+        with MountNbarreL.
       </p>
+      <p>A few tasting rooms to try include:</p>
+
       <h3>Wy’East Vineyards</h3>
       <p>
         Flex your bocci ball skills at{' '}
@@ -125,19 +129,12 @@ export const Activities = () => {
         produces a wide variety of wines, from Chardonnay to Cabernet and Syrah
         to Zinfandel. Variable hours, reliably open 12-5 Wednesday-Monday.
       </p>
-      <p>
-        If you want a little adventure with your wine,{' '}
-        <a href="https://mountnbarrel.com/winery-tours/">book a bike tour</a>{' '}
-        with MountNbarreL.
-      </p>
 
       <h2>Relax!</h2>
       <p>
-        You might prefer a{' '}
-        <a href="https://www.cooperspur.com/amenities/">mellow weekend</a>, and
-        in that case take a short drive to the town of Hood River — a
-        destination on its own. Tourists come for the{' '}
-        <a href="https://hoodriver.org/shop/">shops</a>,{' '}
+        You might prefer a mellow weekend, and in that case take a short drive
+        to the town of Hood River — a destination on its own. Tourists come for
+        the <a href="https://hoodriver.org/shop/">shops</a>,{' '}
         <a href="https://eggrivercafe.com/">breakfasts with a twist</a>, and{' '}
         <a href="http://www.doppiohoodriver.com/">good coffee</a>.
       </p>
@@ -149,11 +146,14 @@ export const Activities = () => {
         for a ride through the region’s woods, orchards, and vineyards.
       </p>
       <p>
-        Cooper Spur also offers enough to keep anyone entertained. Choose from
-        lawn games at the lodge to lounging in a hot tub. Play a game of tennis
-        or throw a few horseshoes. And you can always grab lunch and a drink at
-        the Crooked Tree Tavern, which gets most of its ingredients from local
-        farms.
+        Cooper Spur also offers enough to{' '}
+        <a href="https://www.cooperspur.com/amenities/">
+          keep anyone entertained
+        </a>
+        . Choose from lawn games at the lodge to lounging in a hot tub. Play a
+        game of tennis or throw a few horseshoes. And you can always grab lunch
+        and a drink at the Crooked Tree Tavern, which gets most of its
+        ingredients from local farms.
       </p>
     </ContentContainer>
   );
