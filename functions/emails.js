@@ -18,7 +18,7 @@ exports.confirm = function(name) {
       Kate and Lauren
     </p>
     <br>
-    <img style="width: 300px; height: auto;" src="https://firebasestorage.googleapis.com/v0/b/ourspoonaffair.appspot.com/o/images%2Fus_JL2-bw.jpg?alt=media&token=cd68e673-c407-4ab3-9a54-3cfd10551321" />
+    <img style="width: 300px; height: auto;" src="https://firebasestorage.googleapis.com/v0/b/ourspoonaffair.appspot.com/o/images%2Fbw-8.jpg?alt=media&token=45ff2dea-21db-4789-80be-d09b9f2908cc" />
   `;
 };
 
@@ -36,6 +36,6 @@ exports.decline = function(name) {
       Kate and Lauren
     </p>
      <br>
-    <img style="width: 300px; height: auto;" src="https://firebasestorage.googleapis.com/v0/b/ourspoonaffair.appspot.com/o/images%2Fus_JL2-bw.jpg?alt=media&token=cd68e673-c407-4ab3-9a54-3cfd10551321" />
+    <img style="width: 300px; height: auto;" src="https://firebasestorage.googleapis.com/v0/b/ourspoonaffair.appspot.com/o/images%2Fbw-8.jpg?alt=media&token=45ff2dea-21db-4789-80be-d09b9f2908cc" />
   `;
 };
