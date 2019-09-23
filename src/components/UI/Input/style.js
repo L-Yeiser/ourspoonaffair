@@ -5,11 +5,11 @@ import { standards, colors } from 'themes';
 
 export const Input = styled.input({
   outline: 0,
-  padding: `${standards.padding} 0px`,
   fontSize: standards.body,
   flex: 1,
-  color: colors.white,
+  color: colors.black,
   border: 0,
   background: 'transparent',
-  borderBottom: `1px solid ${colors.white}`,
+  borderBottom: `1px solid ${colors.black}`,
+  borderRadius: 0,
 });

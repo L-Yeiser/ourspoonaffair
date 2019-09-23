@@ -10,4 +10,5 @@ export const colors = {
   grayDarkest: '#343434',
   black: 'rgb(25, 25, 25)',
   blackAlpha: 'rgba(25, 25, 25, 0.75)',
+  error: '#e69195',
 };

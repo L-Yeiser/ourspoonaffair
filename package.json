@@ -3,13 +3,23 @@
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.15",
     "@reach/router": "^1.2.1",
+    "autoprefixer": "^9.6.1",
+    "components": "^0.1.0",
+    "core-js": "^3.2.1",
     "emotion-theming": "^10.0.14",
+    "firebase": "^6.4.2",
+    "lodash": "^4.17.15",
+    "postcss-modules": "^1.4.1",
     "react": ">=16.3.0",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "15.x || 16.x || 16.4.0-alpha.0911da3",
-    "validate.js": "^0.13.1"
+    "validate.js": "^0.13.1",
+    "webfontloader": "^1.6.28",
+    "yarn": "^1.17.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
+    "@babel/core": "^7.0.0-0",
+    "@babel/plugin-transform-runtime": "^7.6.0",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.2",
@@ -29,18 +39,11 @@
   "scripts": {
     "clear-build-cache": "rm -rf .cache/ dist/",
     "dev": "parcel src/index.html",
+    "production": "parcel build src/index.html --out-dir public",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
   },
   "browserslist": [
-    "last 2 Chrome versions",
-    "last 2 ChromeAndroid versions",
-    "last 2 Firefox versions",
-    "last 2 FirefoxAndroid versions",
-    "last 2 Safari versions",
-    "last 2 iOS versions",
-    "last 2 Edge versions",
-    "last 2 Opera versions",
-    "last 2 OperaMobile versions"
+    "defaults"
   ]
 }

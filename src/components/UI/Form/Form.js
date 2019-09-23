@@ -1,31 +1,52 @@
 import React, { useMemo, useContext } from 'react';
+import { isEmpty } from 'lodash';
 
 import { Input } from '../Input/Input';
 import { RadioGroup } from '../RadioGroup/RadioGroup';
 
 import {
-  Container,
+  ContentContainer,
   SectionContent,
   SectionLabel,
-  FormBreak,
+  Container,
   Submit,
+  Errors,
+  LoadingSpinner,
 } from './style';
 
 const FormContext = React.createContext();
 
-const FormSubmit = React.memo(({ onSubmit, children }) => (
+const FormErrors = React.memo(({ validations }) => {
+  if (isEmpty(validations)) {
+    return null;
+  }
+
+  const errorMessages = Object.values(validations);
+  return (
+    <Errors>
+      <ul>
+        {errorMessages.map(([message]) => (
+          <li key={message}>{message}</li>
+        ))}
+      </ul>
+    </Errors>
+  );
+});
+
+const FormSubmit = React.memo(({ onSubmit, children, submitting }) => (
   <Submit
+    type="submit"
     onClick={e => {
       e.preventDefault();
       onSubmit();
     }}
   >
-    {children}
+    {submitting ? <LoadingSpinner /> : children}
   </Submit>
 ));
 
 const FormInput = React.memo(
-  ({ id, label, type, size, maxLength, pattern }) => {
+  ({ id, label, type, size = '30', maxLength, pattern, inputRef }) => {
     const { formContent = {}, onChange } = useContext(FormContext);
     return (
       <>
@@ -33,12 +54,13 @@ const FormInput = React.memo(
         <SectionContent>
           <Input
             onChange={onChange}
-            value={formContent.id}
-            name={id}
+            value={formContent[id] || ''}
+            id={id}
             type={type}
             size={size}
             maxLength={maxLength}
             pattern={pattern}
+            inputRef={inputRef}
           />
         </SectionContent>
       </>
@@ -46,14 +68,14 @@ const FormInput = React.memo(
   }
 );
 
-const FormRadioGroup = React.memo(({ id, inputs, value }) => {
+const FormRadioGroup = React.memo(({ id, inputs }) => {
   const { formContent = {}, onChange } = useContext(FormContext);
   return (
     <SectionContent>
       <RadioGroup
         id={id}
         inputs={inputs}
-        value={formContent[id]}
+        currentValue={formContent[id]}
         onChange={onChange}
       />
     </SectionContent>
@@ -65,7 +87,6 @@ export const Form = ({ children, onChange, formContent }) => {
     onChange,
     formContent,
   ]);
-
   return (
     <Container>
       <FormContext.Provider value={value}>{children}</FormContext.Provider>
@@ -73,8 +94,9 @@ export const Form = ({ children, onChange, formContent }) => {
   );
 };
 
+Form.ContentContainer = ContentContainer;
 Form.FormInput = FormInput;
 Form.FormRadioGroup = FormRadioGroup;
-Form.FormBreak = FormBreak;
 Form.SectionLabel = SectionLabel;
 Form.FormSubmit = FormSubmit;
+Form.FormErrors = FormErrors;

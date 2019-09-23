@@ -6,7 +6,7 @@ export const useToggleState = initialState => {
     updateState(prevState =>
       typeof newState === 'boolean' ? newState : !prevState
     );
-  });
+  }, []);
 
   return [state, toggleState];
 };

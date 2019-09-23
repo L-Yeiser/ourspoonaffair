@@ -3,20 +3,22 @@ const zIndex = {
 };
 
 const spacing = {
-  paddingSmall: '5px',
-  padding: '15px',
-  paddingMedium: '25px',
-  paddingLarge: '40px',
-  margin: '15px',
-  marginMedium: '25px',
-  marginLarge: '40px',
+  paddingExtraSmall: '.125rem',
+  paddingSmall: '.33rem',
+  padding: '1rem',
+  paddingMedium: '1.5rem',
+  paddingLarge: '2rem',
+  marginSmall: '.33rem',
+  margin: '1rem',
+  marginMedium: '1.5rem',
+  marginLarge: '2rem',
 };
 
 const textSize = {
-  h1: '30px',
-  h2: '50px',
-  body: '18px',
-  h4: '16px',
+  h1: '3rem',
+  h2: '1.75rem',
+  h3: '1.25rem',
+  body: '1rem',
 };
 
 export const standards = {

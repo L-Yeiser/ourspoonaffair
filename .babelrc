@@ -1,4 +1,13 @@
 {
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry"
+      }
+    ],
+    ["@babel/preset-react"]
+  ],
   "plugins": [
     [
       "module-resolver",
@@ -6,6 +15,7 @@
         "root": ["./src", "src/components"],
         "extensions": [".js"]
       }
-    ]
+    ],
+    ["@babel/plugin-transform-runtime"]
   ]
 }

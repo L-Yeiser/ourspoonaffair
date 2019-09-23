@@ -3,8 +3,8 @@ import styled from '@emotion/styled';
 import { colors } from 'themes';
 
 export const Button = styled.div`
-  width: 30px;
-  height: 25px;
+  width: 1.5rem;
+  height: 1rem;
   position: relative;
   border: none;
   overflow: hidden;
