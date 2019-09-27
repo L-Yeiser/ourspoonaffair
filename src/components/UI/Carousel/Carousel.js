@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Image, CarouselContainer, Chevron } from './style';
+import { Image, CarouselContainer, Chevron, ChevronContainer } from './style';
 
 export const Carousel = ({ images = [] }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -38,20 +38,24 @@ export const Carousel = ({ images = [] }) => {
     <>
       <CarouselContainer>
         {generateImages()}
-        <Chevron
-          className="left"
-          onClick={() => {
-            setActiveIndex(prev => {
-              return Math.abs((prev + images.length - 1) % images.length);
-            });
-          }}
-        />
-        <Chevron
-          className="right"
-          onClick={() => {
-            setActiveIndex(prev => Math.abs((prev + 1) % images.length));
-          }}
-        />
+        <ChevronContainer className="left">
+          <Chevron
+            className="left"
+            onClick={() => {
+              setActiveIndex(prev => {
+                return Math.abs((prev + images.length - 1) % images.length);
+              });
+            }}
+          />
+        </ChevronContainer>
+        <ChevronContainer className="right">
+          <Chevron
+            className="right"
+            onClick={() => {
+              setActiveIndex(prev => Math.abs((prev + 1) % images.length));
+            }}
+          />
+        </ChevronContainer>
       </CarouselContainer>
     </>
   );

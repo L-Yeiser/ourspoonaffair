@@ -10,7 +10,7 @@ export const CarouselContainer = styled.div`
     width: calc(100vw - 2rem);
     height: calc((100vw - 2rem) / 1.5);
   }
-
+  overflow: hidden;
   position: relative;
 `;
 
@@ -37,26 +37,43 @@ export const Image = styled.img`
   }
 `;
 
+export const ChevronContainer = styled.div`
+  background-color: ${colors.blackBeta};
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  &.right {
+    right: 0.5rem;
+    top: 50%;
+  }
+
+  &.left {
+    left: 0.5rem;
+    top: 50%;
+  }
+`;
+
 export const Chevron = styled.button`
   border: solid ${colors.white};
-  border-width: 0 0.5rem 0.5rem 0;
+  border-width: 0 0.25rem 0.25rem 0;
   display: inline-block;
-  padding: 0.5rem;
+  padding: 0.25rem;
   background: none;
-  position: absolute;
   outline: none;
 
   &.right {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
-    right: 1rem;
-    top: 50%;
+    margin-right: 0.25rem;
   }
 
   &.left {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
-    left: 1rem;
-    top: 50%;
+    margin-left: 0.25rem;
   }
 `;
