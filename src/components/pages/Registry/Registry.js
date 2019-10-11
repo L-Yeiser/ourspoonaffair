@@ -9,7 +9,7 @@ export const Registry = () => (
       space we&apos;re exploring ways to live more simply and leave a lighter
       footprint. We hope you&apos;ll consider investing your time to help us
       celebrate our commitment and our future. It&apos;s the single best gift we
-      can image.
+      can imagine.
     </p>
     <h2>A Charitable Donation</h2>
     <p>
