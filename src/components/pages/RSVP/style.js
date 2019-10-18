@@ -14,7 +14,11 @@ export const FormContainer = styled.div`
   border-radius: ${standards.borderRadius};
   overflow-y: scroll;
   padding: ${standards.padding} ${standards.paddingMedium};
-  max-height: 50vh;
+  /* max-height: 50vh; */
+  ${[constants.mediaQuery('large')]} {
+    height: calc(100vh - 83px);
+    background: white;
+  }
 
   button[type='submit'] {
     margin-top: ${standards.marginLarge};

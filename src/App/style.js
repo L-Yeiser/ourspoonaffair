@@ -3,17 +3,23 @@ import styled from '@emotion/styled';
 
 import { standards, colors, constants } from 'themes';
 
-import image from 'assets/background.jpg';
+import backgroundSmall from 'assets/background-small.jpg';
+import backgroundMedium from 'assets/background-medium.jpg';
+import backgroundLarge from 'assets/background-standard.jpg';
 
 export const AppContainer = styled.div`
   color: ${colors.black};
   font-family: 'Montserrat', sans-serif;
-  background: url(${image}) no-repeat center center fixed;
-  background-position: '50%' '50%';
+  background: url(${backgroundLarge}) 50% 50% / cover no-repeat;
+  ${[constants.mediaQuery('small')]} {
+    background: url(${backgroundSmall}) 50% 50% / cover no-repeat;
+  }
+    ${[constants.mediaQuery('large')]} {
+    background: url(${backgroundMedium}) 50% 50% / cover no-repeat;
+  }
+
   height: 100vh;
   width: '100%'
-  background-repeat: no-repeat;
-  background-size: cover;
   font-size: ${standards.body};
 
   h2, h1, h3, h4, h5 {
