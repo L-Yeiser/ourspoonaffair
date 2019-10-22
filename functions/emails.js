@@ -5,7 +5,7 @@ exports.confirm = function(name) {
     Thank you for taking a moment to RSVP. We’re so excited you’ll be joining us for the wedding! 
     </p>
     <p>
-    In the coming months we’ll be sending updates and information on what to xconsider when packing for Mt. Hood in September. 
+    In the coming months we’ll be sending updates and information on what to consider when packing for Mt. Hood in September. 
     </p>
     <p>
       We’ll also work to accommodate everyone who is interested in staying at Cooper Spur. If you indicated you wouldn’t mind bunking with family and friends, we’ll follow up with proposed lodging as well.
@@ -18,7 +18,7 @@ exports.confirm = function(name) {
       Kate and Lauren
     </p>
     <br>
-    <img style="width: 300px; height: auto;" src="https://firebasestorage.googleapis.com/v0/b/ourspoonaffair.appspot.com/o/images%2Fbw-8.jpg?alt=media&token=45ff2dea-21db-4789-80be-d09b9f2908cc" />
+    <img style="width: 300px; height: auto;" src="https://firebasestorage.googleapis.com/v0/b/ourspoonaffair.appspot.com/o/images%2Fbw-14.jpg?alt=media&token=d23f2a7b-b8b8-4b30-9eae-ce88adc07cfa" />
   `;
 };
 
@@ -36,6 +36,6 @@ exports.decline = function(name) {
       Kate and Lauren
     </p>
      <br>
-    <img style="width: 300px; height: auto;" src="https://firebasestorage.googleapis.com/v0/b/ourspoonaffair.appspot.com/o/images%2Fbw-8.jpg?alt=media&token=45ff2dea-21db-4789-80be-d09b9f2908cc" />
+    <img style="width: 300px; height: auto;" src="https://firebasestorage.googleapis.com/v0/b/ourspoonaffair.appspot.com/o/images%2Fbw-14.jpg?alt=media&token=d23f2a7b-b8b8-4b30-9eae-ce88adc07cfa" />
   `;
 };
