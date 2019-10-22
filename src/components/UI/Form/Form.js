@@ -46,7 +46,16 @@ const FormSubmit = React.memo(({ onSubmit, children, submitting }) => (
 ));
 
 const FormInput = React.memo(
-  ({ id, label, type, size = '30', maxLength, pattern, inputRef }) => {
+  ({
+    id,
+    label,
+    type,
+    size = '30',
+    maxLength,
+    pattern,
+    inputRef,
+    placeholder,
+  }) => {
     const { formContent = {}, onChange } = useContext(FormContext);
     return (
       <>
@@ -61,6 +70,7 @@ const FormInput = React.memo(
             maxLength={maxLength}
             pattern={pattern}
             inputRef={inputRef}
+            placeholder={placeholder}
           />
         </SectionContent>
       </>

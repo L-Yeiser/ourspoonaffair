@@ -4,24 +4,21 @@ import styled from '@emotion/styled';
 import { standards, colors, constants } from 'themes';
 
 import backgroundSmall from 'assets/background-small.jpg';
-import backgroundMedium from 'assets/background-medium.jpg';
-import backgroundLarge from 'assets/background-standard.jpg';
+import backgroundLarge from 'assets/background-large.jpg';
 
 export const AppContainer = styled.div`
   color: ${colors.black};
   font-family: 'Montserrat', sans-serif;
+
   background: url(${backgroundLarge}) 50% 50% / cover no-repeat;
-  ${[constants.mediaQuery('small')]} {
+  ${[constants.mediaQuery('large')]} {
     background: url(${backgroundSmall}) 50% 50% / cover no-repeat;
-  }
-    ${[constants.mediaQuery('large')]} {
-    background: url(${backgroundMedium}) 50% 50% / cover no-repeat;
   }
 
   height: 100vh;
   width: '100%'
   font-size: ${standards.body};
-
+ 
   h2, h1, h3, h4, h5 {
     font-family: 'Amatic SC', cursive;
     margin-block-start: 0;
