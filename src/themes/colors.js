@@ -3,6 +3,7 @@ export const colors = {
   blueSlate: '#708090',
   blueDark: '#55616d',
   white: 'rgb(245, 245, 245)',
+  whiteAlpha: 'rgb(245, 245, 245, 0.75)',
   grayLight: 'rgb(120, 120, 120)',
   grayLightest: 'rgb(218, 218, 218)',
   gray: 'rgb(105, 105, 105)',

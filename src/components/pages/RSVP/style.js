@@ -6,18 +6,20 @@ import { colors, standards, constants } from 'themes';
 export const Container = styled.div`
   display: flex;
   justify-content: center;
+  overflow: hidden;/
 `;
 
 export const FormContainer = styled.div`
-  /* background: ${colors.blackAlpha}; */
+  overflow: hidden;
+
   color: ${colors.black};
   border-radius: ${standards.borderRadius};
   overflow-y: scroll;
   padding: ${standards.padding} ${standards.paddingMedium};
-  /* max-height: 50vh; */
+  max-height: 50vh;
   ${[constants.mediaQuery('large')]} {
-    height: calc(100vh - 83px);
-    background: white;
+    max-height: inherit;
+    background: ${colors.whiteAlpha};
   }
 
   button[type='submit'] {
