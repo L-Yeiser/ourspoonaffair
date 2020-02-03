@@ -5,7 +5,7 @@ import { isEmpty } from 'lodash';
 import firebase from 'firebase';
 
 import { useMergeState } from 'Hooks';
-import { Form } from 'UI';
+import { Form, ContentContainer } from 'UI';
 import { RSVPValidations } from 'constants/validations';
 import { stringToNumber } from 'utils/stringToNumber';
 
@@ -33,6 +33,7 @@ export const RSVP = () => {
   const [form, mergeState] = useMergeState({ rsvp: {}, validations: {} });
   const [submitting, setSubmitting] = useState(false);
   const guestCountEl = useRef(null);
+  const [hasRSVP, setHasRSVP] = useState(false);
 
   const validateRSVP = rsvp => {
     return validate(rsvp, RSVPValidations, {
@@ -83,55 +84,72 @@ export const RSVP = () => {
     }
 
     setSubmitting(false);
+    setHasRSVP(true);
   }, [form]);
 
   return (
     <Container>
-      <FormContainer>
-        <header>
-          <h2>RSVP</h2>
-        </header>
-        <Form onChange={updateRsvp} formContent={form.rsvp}>
-          <Form.ContentContainer>
-            <Form.FormInput id="name" label="Full Name" type="text" />
-            <Form.FormInput id="email" label="Email" type="email" />
-            <Form.SectionLabel label="Attending" />
-            <Form.FormRadioGroup
-              id="attending"
-              inputs={[
-                {
-                  id: 'yes',
-                  label: 'Yes',
-                  value: true,
-                },
-                {
-                  id: 'no',
-                  label: 'No',
-                  value: false,
-                },
-              ]}
-            />
-            {form.rsvp.attending ? (
-              <>
-                <Form.FormInput
-                  type="text"
-                  id="guestCount"
-                  label="Guest Count"
-                  size="2"
-                  maxLength="1"
-                  pattern="\d*"
-                  inputRef={guestCountEl}
-                />
-                <GuestCount count={form.rsvp.guestCount} />
-              </>
-            ) : null}
-          </Form.ContentContainer>
-          <Form.FormErrors validations={form.validations} />
-          <Form.FormSubmit onSubmit={submitRsvp} submitting={submitting}>
-            Get Excited
-          </Form.FormSubmit>
-        </Form>
-      </FormContainer>
+      {hasRSVP
+        ? (
+          <ContentContainer>
+          <h3>
+            Thanks so much for getting back to us!
+          </h3>
+          <p>
+            We&apos;ll follow up through email with updates and more details. Can&apos;t find the email? Try your spam folder.
+
+          </p>
+          </ContentContainer>
+        ) : (
+          <FormContainer>
+          <header>
+            <h2>RSVP</h2>
+          </header>
+          <Form onChange={updateRsvp} formContent={form.rsvp}>
+            <Form.ContentContainer>
+              <Form.FormInput id="name" label="Full Name" type="text" />
+              <Form.FormInput id="email" label="Email" type="email" />
+              <Form.SectionLabel label="Attending" />
+              <Form.FormRadioGroup
+                id="attending"
+                inputs={[
+                  {
+                    id: 'yes',
+                    label: 'Yes',
+                    value: true,
+                  },
+                  {
+                    id: 'no',
+                    label: 'No',
+                    value: false,
+                  },
+                ]}
+              />
+              {form.rsvp.attending ? (
+                <>
+                  <Form.FormInput
+                    type="text"
+                    id="guestCount"
+                    label="Guest Count"
+                    size="2"
+                    maxLength="1"
+                    pattern="\d*"
+                    inputRef={guestCountEl}
+                  />
+                  <GuestCount count={form.rsvp.guestCount} />
+                </>
+              ) : null}
+            </Form.ContentContainer>
+            <Form.FormErrors validations={form.validations} />
+            <Form.FormSubmit onSubmit={submitRsvp} submitting={submitting}>
+              Get Excited
+            </Form.FormSubmit>
+          </Form>
+        </FormContainer>
+        )
+
+      }
+
     </Container>
   );
 };
