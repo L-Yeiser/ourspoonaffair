@@ -5,13 +5,10 @@ exports.confirm = function(name) {
     Thank you for taking a moment to RSVP. We’re so excited you’ll be joining us for the wedding! 
     </p>
     <p>
-    In the coming months we’ll be sending updates and information on what to consider when packing for Mt. Hood in September. 
+    In the coming months we’ll be sending updates and information on what to consider when packing for Mt. Hood in September. In the coming months we’ll send updates on lodging and information on what to consider when packing for Mt. Hood in September. 
     </p>
     <p>
-      We’ll also work to accommodate everyone who is interested in staying at Cooper Spur. If you indicated you wouldn’t mind bunking with family and friends, we’ll follow up with proposed lodging as well.
-    </p>
-    <p>
-      Finally, our meals will be vegan with gluten-free options. Please let us know of any additional dietary restrictions or allergies, or any physical accommodation needs for the weekend.
+      Finally, our meals will be vegan with gluten-free options. Please let us know of any additional dietary restrictions or allergies, or any physical accommodation needs for the weekend.Our meals will be vegan, with gluten-free options. Please let us know of any additional dietary restrictions or allergies, or any physical accommodation needs for the weekend.
     </p>
     <p>
       We’re so looking forward to celebrating with you,<br>
