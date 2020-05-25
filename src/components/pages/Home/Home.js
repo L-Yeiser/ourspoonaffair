@@ -15,9 +15,9 @@ export const Home = () => {
           <span>Lauren Yeiser</span>
         </h1>
         <p>
-          <span>Saturday, Sept 5, 2020</span>{' '}
+          <span>Saturday, Jully 11th, 2020</span>{' '}
           <span className="hideSmall">| </span>
-          <span>Mt Hood, Oregon</span>
+          <span>Our Backyard, Portland, Ore. </span>
         </p>
       </Container>
     </ContentContainer>

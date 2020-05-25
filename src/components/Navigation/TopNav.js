@@ -17,7 +17,7 @@ const Links = ({ onClick }) => (
     <NavLink onClick={onClick} to="/wedding">
       Wedding
     </NavLink>
-    <NavLink onClick={onClick} to="/lodging">
+    {/* <NavLink onClick={onClick} to="/lodging">
       Lodging
     </NavLink>
     <NavLink onClick={onClick} to="/activities">
@@ -25,7 +25,7 @@ const Links = ({ onClick }) => (
     </NavLink>
     <NavLink onClick={onClick} to="/RSVP">
       RSVP
-    </NavLink>
+    </NavLink> */}
     <NavLink onClick={onClick} to="registry">
       Registry
     </NavLink>
